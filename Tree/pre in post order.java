@@ -21,11 +21,13 @@ public List<Integer> preorderTraversal(TreeNode root) {
         return res;
     }
 // inorder 左 根 右
-// 原则：访问左子树。【先访问左子树中的左子树，再访问左子树中的右子树。】直到访问到叶子结点后输出。
+// 原则：访问左子树。【先访问左子树中的左子树，再访问左子树中的右子树。】直到访问到叶子结点
 
 // 　　　　　　　输出根。
 
-// 　　 访问右子树。【先访问右子树中的左子树，再访问右子树中的右子树。】直到访问到叶子结点后输出。
+// 　　 访问右子树。【先访问右子树中的左子树，再访问右子树中的右子树。】直到访问到叶子结点
+
+//  一直往左找到叶子节点输出 再右移一个 再往复
 public List<Integer> inorderTraversal(TreeNode root) {
         if(root == null) return new ArrayList<>();
         List<Integer> res = new ArrayList<>();
@@ -45,9 +47,34 @@ public List<Integer> inorderTraversal(TreeNode root) {
     }
 
 // postorder
-// 原则：访问左子树。【先访问左子树中的左子树，再访问左子树中的右子树】。直到访问到叶子结点后输出。
+// 原则：访问左子树。【先访问左子树中的左子树，再访问左子树中的右子树】。直到访问到叶子结点
 
-// 　　　　　　  访问右子树。【先访问右子树中的左子树，再访问右子树中的右子树】。直到访问到叶子结点后输出。
+// 　　　访问右子树。【先访问右子树中的左子树，再访问右子树中的右子树】。直到访问到叶子结点
 
 // 　　　	再返回访问根，并输出。
+public List<Integer> postorderTraversal(TreeNode root) {
+        //non-recursive;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        List<Integer> postorder = new ArrayList<Integer>();
+        TreeNode node = root;
+        TreeNode lastVisit = root;
+        while(node != null || !stack.empty()){
+            while(node != null){
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.peek();//查看当前栈顶元素
+            //如果其右子树也为空，或者右子树已经访问
+            //则可以直接输出当前节点的值
+            if(node.right == null || node.right == lastVisit){
+                postorder.add(node.val);
+                stack.pop();
+                lastVisit = node;
+                node = null;
+            }else{//否则继续遍历右子树
+                node  = node.right;
+            }
+        }
+        return postorder;
+    }
 
