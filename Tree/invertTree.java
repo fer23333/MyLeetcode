@@ -7,6 +7,7 @@ public TreeNode invertTree(TreeNode root) {
     }
     public void helper(TreeNode root){
         if(root == null) return;
+            //操作
         TreeNode temp = root.left;
         root.left = root.right;
         root.right = temp;
@@ -20,6 +21,7 @@ public TreeNode invertTree(TreeNode root) {
         if(root == null) return root;
         TreeNode left = invertTree(root.left);
         TreeNode right = invertTree(root.right);
+        //操作
         root.right = left;
         root.left =right;
         return root;
