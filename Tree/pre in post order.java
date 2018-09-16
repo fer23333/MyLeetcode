@@ -1,7 +1,7 @@
-```markdown
+
 // https://www.cnblogs.com/shunyu/p/4986288.html 二叉树遍历分析
 // 根的意思是输出当前节点值
-#// preorder 比较简单直接
+// preorder 比较简单直接
 //time O(n) space O(h) height 如果是balanced O(height) O(logn) 如果不是平衡的 worst case 是O(n)
 ###注意堆栈 先右后左 
 public List<Integer> preorderTraversal(TreeNode root) {
@@ -77,4 +77,4 @@ public List<Integer> postorderTraversal(TreeNode root) {
         return postorder;
     }
 
-```
+
