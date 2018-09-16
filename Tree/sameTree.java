@@ -1,4 +1,6 @@
-    public boolean isSameTree(TreeNode p, TreeNode q) {
+//双preorder结构 最简单的题
+//并不是preorder
+public boolean isSameTree(TreeNode p, TreeNode q) {
         if(p == null && q == null) return true;
         if(p == null || q==null) return false;
         
