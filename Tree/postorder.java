@@ -31,3 +31,14 @@ public List<Integer> postorderTraversal(TreeNode root) {
         result.add(root.val);
         return result;
     }
+
+//模板
+
+//结果
+public<T> helper(TreeNode root){
+	if(root == null) return 0;
+	<T> l = helper(root.left);
+	<T> r = helper(root.right); // + 1
+	//操作
+    return 结果/(l,r);
+}
