@@ -1,4 +1,4 @@
-```java
+
 https://www.cnblogs.com/shunyu/p/4986288.html 二叉树遍历分析
 根的意思是输出当前节点值
 preorder 比较简单直接
@@ -37,4 +37,4 @@ postorder
 　　　	再返回访问根，并输出。
 
 
-```
+
