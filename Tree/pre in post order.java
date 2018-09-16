@@ -3,7 +3,7 @@
 // 根的意思是输出当前节点值
 // preorder 比较简单直接
 //time O(n) space O(h) height 如果是balanced O(height) O(logn) 如果不是平衡的 worst case 是O(n)
-注意堆栈 先右后左 
+#注意堆栈 先右后左 
 public List<Integer> preorderTraversal(TreeNode root) {
         if(root == null) return new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
