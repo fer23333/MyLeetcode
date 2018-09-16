@@ -1,8 +1,9 @@
-```java
+
 https://www.cnblogs.com/shunyu/p/4986288.html 二叉树遍历分析
 根的意思是输出当前节点值
 preorder 比较简单直接
-    
+
+```markdown 
     public List<Integer> preorderTraversal(TreeNode root) {
         if(root == null) return new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
@@ -20,7 +21,7 @@ preorder 比较简单直接
         }
         return res;
     }
-    
+```   
 inorder 左 根 右
 原则：访问左子树。【先访问左子树中的左子树，再访问左子树中的右子树。】直到访问到叶子结点后输出。
 
@@ -36,6 +37,3 @@ postorder
 
 　　　	再返回访问根，并输出。
 
-
-
-```
