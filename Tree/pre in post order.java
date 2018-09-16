@@ -51,30 +51,25 @@ public List<Integer> inorderTraversal(TreeNode root) {
 // 原则：访问左子树。【先访问左子树中的左子树，再访问左子树中的右子树】。直到访问到叶子结点
 // 　　　访问右子树。【先访问右子树中的左子树，再访问右子树中的右子树】。直到访问到叶子结点
 // 　　　再返回访问根，并输出。
-public List<Integer> postorderTraversal(TreeNode root) {
+
+    public List<Integer> postorderTraversal(TreeNode root) {
         //non-recursive;
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        List<Integer> postorder = new ArrayList<Integer>();
-        TreeNode node = root;
-        TreeNode lastVisit = root;
-        while(node != null || !stack.empty()){
-            while(node != null){
-                stack.push(node);
-                node = node.left;
-            }
-            node = stack.peek();//查看当前栈顶元素
-            //如果其右子树也为空，或者右子树已经访问
-            //则可以直接输出当前节点的值
-            if(node.right == null || node.right == lastVisit){
-                postorder.add(node.val);
-                stack.pop();
-                lastVisit = node;
-                node = null;
-            }else{//否则继续遍历右子树
-                node  = node.right;
-            }
-        }
-        return postorder;
+	LinkedList<Integer> ans = new LinkedList<>();
+	Stack<TreeNode> stack = new Stack<>();
+	if (root == null) return ans;
+	stack.push(root);
+	while (!stack.isEmpty()) {
+		TreeNode cur = stack.pop();
+		ans.addFirst(cur.val);
+		if (cur.left != null) {
+			stack.push(cur.left);
+		}
+		if (cur.right != null) {
+			stack.push(cur.right);
+		} 
+	}
+	return ans;
     }
+
 
 
