@@ -10,3 +10,8 @@ public boolean isSymmetric(TreeNode root) {
         if(p.val != q.val) return false;
         return isSame(p.right,q.left ) && isSame(p.left, q.right );
     }
+
+//非递归 bfs
+
+
+//非递归 dfs preorder
