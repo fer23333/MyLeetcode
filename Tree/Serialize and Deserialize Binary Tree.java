@@ -19,3 +19,13 @@ public class Codec {
         helper(root.left, list);
         helper(root.right, list);
     }
+        // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        if(data == null || data.length() == 0) return null;
+        
+    } 
+}
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec = new Codec();
+// codec.deserialize(codec.serialize(root));
