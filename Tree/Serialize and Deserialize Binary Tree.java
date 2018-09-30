@@ -1,31 +1,51 @@
-//preorder traversal recursive
-public class Codec {
+class TreeNode {
+     int val;
+    TreeNode left;
+     TreeNode right;
+     TreeNode(int x) { val = x; }
+ }
 
+public class Codec{
+    public static void main(String[] args){
+         Codec codec = new Codec();
+         codec.deserialize(codec.serialize(root));
+
+    }
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        if(root == null) return "[null]";
-        List<String> list = new ArrayList<>();
-        helper(root, list);
-        System.out.println(list.toString());
-        return list.toString();
+        if(root == null) return "null";
+        StringBuilder sb = new StringBuilder();
+        helperS(root, sb);
+        System.out.println(sb.toString());
+        sb.deleteCharAt(sb.length() - 1);
+        return(sb.toString());
     }
-    public static void helper(TreeNode root, List<String> list){
+    public static void helperS(TreeNode root, StringBuilder sb){
         if(root == null){
-            list.add(null);
-            return;            
-        } 
-
-        list.add(String.valueOf(root.val));
-        helper(root.left, list);
-        helper(root.right, list);
+            sb.append("null"+ ",");
+            return;
+        }
+        sb.append(root.val+ ",");
+        helper(root.left, sb);
+        helper(root.right, sb);
     }
-        // Decodes your encoded data to tree.
+
+    // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
         if(data == null || data.length() == 0) return null;
-        
-    } 
-}
+        String[] datas = data.split(",");
+        Deque<String> nodes = new LinkedList<>();
+        nodes.addAll(Arrays.asList(datas));
+        return helperD(nodes);
 
-// Your Codec object will be instantiated and called as such:
-// Codec codec = new Codec();
-// codec.deserialize(codec.serialize(root));
+    }
+    public static TreeNode helperD(Deque<String> nodes){
+        String val =  nodes.poll();
+        if(val.equals("null")) return null;
+        else
+            TreeNode node =  new TreeNode(Integer.valueOf(val));
+            node.left = helperD(nodes);
+            node.right = helperD(nodes);
+            return node;
+    }
+}
