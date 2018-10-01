@@ -8,7 +8,9 @@ class TreeNode {
     TreeNode right;
     TreeNode(int x) { val = x; }
 }
-
+//[1,2,3,null,null,4,5]
+//1,2,null,null,3,4,null,null,5,null,null
+//[1,2,3,null,null,4,5]
 
 class Codec{
 //    public static void main(String[] args) {
@@ -43,6 +45,7 @@ class Codec{
     }
 
     // Decodes your encoded data to tree.
+    //使用linkedlist
     public TreeNode deserialize(String data) {
         if(data == null || data.length() == 0) return null;
         String[] datas = data.split(",");
@@ -61,5 +64,27 @@ class Codec{
             return node;
         }
 
+    }
+    //不使用linkedlist 使用index数组
+        public TreeNode deserialize(String data) {
+        if(data == null || data.length() == 0) return null;
+        String[] datas = data.split(",");
+        int[] index = new int[]{0};
+        return helperD(datas, index);
+        
+    } 
+    public static TreeNode helperD(String[] datas, int[] index){
+        if(index[0] == datas.length){
+            return null;
+        }
+        String visiting = datas[index[0]++];
+        if(visiting.equals("null")){
+            return null;
+        }
+        
+        TreeNode node =  new TreeNode(Integer.valueOf(visiting));
+        node.left = helperD(datas, index);
+        node.right = helperD(datas, index);
+        return node;
     }
 }
