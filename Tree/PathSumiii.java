@@ -24,5 +24,6 @@
         map.put(prefixSum, map.getOrDefault(prefixSum, 0)+ 1);
         res += helper(root.left, sum, map, prefixSum) + helper(root.right, sum, map, prefixSum);
         map.put(prefixSum, map.get(prefixSum) -1);
+        //要去掉考察过的current node
         return res;
     }
