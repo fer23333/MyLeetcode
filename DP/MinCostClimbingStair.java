@@ -1,4 +1,8 @@
-    public int minCostClimbingStairs(int[] cost) {
+// dp[i]表示爬到第i层的最小cost，然后我们来想dp[i]如何推导。我们来思考一下如何才能到第i层呢？是不是只有两种可能性，一个是从第i-2层上直接跳上来，一个是从第i-1层上跳上来。不会再有别的方法，所以我们的dp[i]只和前两层有关系，所以可以写做如下：
+
+// dp[i] = min(dp[i- 2] + cost[i - 2], dp[i - 1] + cost[i - 1])    
+
+public int minCostClimbingStairs(int[] cost) {
         int n = cost.length;
         int[] dp = new int[n+1];
         for(int i = 2; i< n+1; i++){
@@ -8,7 +12,7 @@
     }
     
     
-      public int minCostClimbingStairs(int[] cost) {
+public int minCostClimbingStairs(int[] cost) {
         if(cost == null || cost.length == 0)
             return 0;
         int[] costArray = new int[cost.length+1];
