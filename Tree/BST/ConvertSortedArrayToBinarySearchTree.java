@@ -50,4 +50,7 @@ int binarySearch(int *array, int left, int right, int value)
         return cur;
     }
     //注意要 mid+1 mid-1   而且是l>r相当于上面二分法的反向
+// -10 0 5
+//  0  1  2
+// 0 1 l<r继续 创建两个节点 
 
