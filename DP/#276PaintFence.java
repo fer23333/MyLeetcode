@@ -21,14 +21,16 @@
                // n>2 时若k仍为1 则无法刷出指定篱笆
 
     public int numWays(int n, int k) {
-        // write your code here
-        int dp[] = {0, k , k*k, 0};
-        if(n <= 2)
-            return dp[n];
-        if (k == 1)
+       
+        int[] dp = {0, k, k*k, 0};
+        if(n <=2){
+            return dp[n];    
+        }else if(n>2 && k == 1){
             return 0;
-        for(int i = 2; i < n; i++) {
-            dp[3] = (k - 1) * (dp[1] + dp[2]);
+            
+        }
+        for(int i = 2; i< n; i++){
+            dp[3] = (k-1) * (dp[2] + dp[1]);
             dp[1] = dp[2];
             dp[2] = dp[3];
         }
