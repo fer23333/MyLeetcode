@@ -43,3 +43,41 @@ equals：那啥，所有的对象都是继承自Object这个大家都知道吧�
 那么效果与==操作就不一样了。其实我觉得这才是楼主真正要问的地方。这里参见最开始的回答。
 另外，那啥，再加一句，instanceof 也是个好东西哇。你可以用他检查引用型变量是否属于某一个Class：
 那啥，返回的也是true 或者false，跟c#里的is差不多的说。
+
+举个例子，为某个应用定义一个User类，简单代码如下：
+```java
+public class User {
+    private int id;
+
+    public User(int id) {
+        this.id = id;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+}
+
+一般在数据库中，用id标识用户的唯一身份。所以理解上ID相同的User为同一个User。如果接下来直接比较两个id相同的User对象，结果应该可以想到：
+
+    User user1 = new User(1);
+    User user2 = new User(1);
+    System.out.println(user1.equals(user2));
+结果是false,原因是没有覆写equals方法，导致使用的Object中默认的实现，通过==进行比较。现在加上覆写的equals方法，结果就是true了。
+
+@Override
+public boolean equals(Object obj) {
+    if (this == obj)
+        return true;
+    if (obj == null)
+        return false;
+    if (getClass() != obj.getClass())
+        return false;
+    User other = (User) obj;
+    if (id != other.id)
+        return false;
+    return true;
+}
+```
