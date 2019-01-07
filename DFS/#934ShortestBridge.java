@@ -1,6 +1,6 @@
 扫雷解法
 
-```java
+
     int[][] dirs = {{0,1}, {0,-1}, {1,0}, {-1,0}};    
     public int shortestBridge(int[][] A) {
         if(A == null || A.length == 0){
@@ -61,12 +61,12 @@
         return A[x][y] == 1;
     }
 
-```
+
                        
 dfs + bfs 
 
                        
-```java
+
     final static int[][] dirs = {{0,1}, {0,-1}, {1,0}, {-1,0}};
     public int shortestBridge(int[][] A) {
         if(A == null || A.length == 0){
@@ -126,7 +126,7 @@ dfs + bfs
             dfs(A, x+dir[0], y+dir[1], visited, q);
         }
     }                       
-```                      
+                  
                        
                        
                        
