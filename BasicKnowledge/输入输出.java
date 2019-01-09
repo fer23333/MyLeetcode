@@ -31,3 +31,8 @@ int i = Integer.parseInt(br.readLine());
 import java.io.DataInputStream;
 DataInputStream dis = new DataInputStream(System.in);
 int i = dis.readInt();
+
+java不能直接System.out.prinln(array)  这样会得到一个array的地址
+但是list string queue 等都可以直接print
+List<integer> list = new ArrayList<>(Arrays.asList(1,2,3));
+System.out.println(list);
