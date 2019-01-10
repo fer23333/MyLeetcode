@@ -11,3 +11,68 @@
 
 2. DFS
 遍历图中的所有点，从i点出发开始DFS，如果在DFS的不断深入过程中又回到了该点，则说明图中存在回路。
+
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        if(prerequisites == null || prerequisites.length == 0){
+            return true;
+        }
+        int m = prerequisites.length; int n = prerequisites[0].length;
+        int[] indegree = new int[numCourses];
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        //注意map存的是 先序-》后序课程
+        for(int[] pre : prerequisites){
+            indegree[pre[0]]++;
+            if(map.containsKey(pre[1])){
+                map.get(pre[1]).add(pre[0]);
+            }else{
+                List<Integer> list = new ArrayList<>();
+                list.add(pre[0]);
+                map.put(pre[1], list);
+            }
+        }
+        Queue<Integer> q = new LinkedList<>();
+        //queue保存入度为0的点并不断更新 
+        //initialize
+        for(int i=0; i< numCourses; i++){
+            if(indegree[i] == 0)
+                q.offer(i);
+        }
+        while(!q.isEmpty()){
+            int number = q.poll();
+            List<Integer> adj = map.get(number);
+            System.out.println(adj);
+            //由于邻接链表可能为空 而且bfs的范围是领结链表的size而不是q的size
+            for(int i =0; adj!= null && i< adj.size(); i++){
+                indegree[adj.get(i)]--;
+                if(indegree[adj.get(i)] == 0 ){
+                    q.offer(adj.get(i));
+                }
+
+            }
+        }
+        for(int i =0; i< numCourses; i++){
+            if(indegree[i] != 0){
+                return false;
+            }
+        }
+        return true;
+        
+    }
+    
+使用领结表结构 ArrayList<Integer>[] G = new ArrayList[n];
+
+    public boolean canFinish(int n, int[][] prerequisites) {
+        ArrayList<Integer>[] G = new ArrayList[n];
+        int[] degree = new int[n];
+        ArrayList<Integer> bfs = new ArrayList();
+        for (int i = 0; i < n; ++i) G[i] = new ArrayList<Integer>();
+        for (int[] e : prerequisites) {
+            G[e[1]].add(e[0]);
+            degree[e[0]]++;
+        }
+        for (int i = 0; i < n; ++i) if (degree[i] == 0) bfs.add(i);
+        for (int i = 0; i < bfs.size(); ++i)
+            for (int j: G[bfs.get(i)])
+                if (--degree[j] == 0) bfs.add(j);
+        return bfs.size() == n;
+    }
