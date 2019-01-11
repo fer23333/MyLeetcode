@@ -31,3 +31,7 @@ stack和queue现在很多都用arraydeque实现
 | 无 | `pollFirst()` | 获取并删除栈顶元素，失败则返回`null` |
 | `peek()` | `peekFirst()` | 获取但不删除栈顶元素，失败则抛出异常 |
 | 无 | `peekFirst()` | 获取但不删除栈顶元素，失败则返回`null` |
+
+Queue<> q = new ArrayDeque<>() or Queue<> q = new LinkedList<>();
+
+Deque<>  d= new ArrayDeque<>();
