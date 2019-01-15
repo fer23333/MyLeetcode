@@ -1,3 +1,6 @@
+最长的序列 可以跳过一些元素 获得最终的不可改变元素顺序的子序列
+bbabb-> bbbb 4 
+
 求最值问题 dp
 dp[i][j]: the longest palindromic subsequence's length of substring(i, j), here i, j represent left, right indexes in the string
 State transition:
