@@ -21,3 +21,24 @@ Whenever a method is invoked, a new block is created in the stack memory for the
 As soon as method ends, the block becomes unused and become available for next method.
 
 Stack memory size is very less compared to Heap memory.
+
+
+```
+public class Memory {
+
+	public static void main(String[] args) { // Line 1
+		int i=1; // Line 2
+		Object obj = new Object(); // Line 3
+		Memory mem = new Memory(); // Line 4
+		mem.foo(obj); // Line 5
+	} // Line 9
+
+	private void foo(Object param) { // Line 6
+		String str = param.toString(); //// Line 7
+		System.out.println(str);
+	} // Line 8
+
+}
+```
+
+[[https://cdn.journaldev.com/wp-content/uploads/2014/08/Java-Heap-Stack-Memory.png]]
