@@ -41,4 +41,4 @@ public class Memory {
 }
 ```
 
-[[https://cdn.journaldev.com/wp-content/uploads/2014/08/Java-Heap-Stack-Memory.png]]
+<img src="https://cdn.journaldev.com/wp-content/uploads/2014/08/Java-Heap-Stack-Memory.png" alt="hi" class="inline"/>
