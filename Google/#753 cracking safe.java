@@ -1,4 +1,4 @@
-汉密尔顿环
+汉密尔顿环 np-complete问题
 https://www.youtube.com/watch?v=iPLQgXUiU14
 
 // n=1, k=2 01  0 1   -> 01
