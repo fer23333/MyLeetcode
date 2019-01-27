@@ -35,3 +35,5 @@ s = "acdcb"
 p = "a*c?b"
 Output: false
 
+dfs + memo  ==  DP
+决策树类型
