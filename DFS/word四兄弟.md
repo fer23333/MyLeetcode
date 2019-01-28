@@ -106,6 +106,16 @@ words = ["oath","pea","eat","rain"] and board =
 Output: ["eat","oath"]
 ```
 遍历dfs 然后查找是否在dic里存了这个
+
 预处理前缀 使用hashmap或者 trie tree
+
+follow-up: 如果词典很大 最多可以填出多少词
+
+搜索套搜索： 找到一个word 继续搜索 不停止
+
+# word break 
+
+dfs with memorized(dp)
+
 
 
