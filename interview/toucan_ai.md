@@ -43,6 +43,8 @@ The accuracy of your classifications will depend on the effectiveness of the alg
 
 ### a label Logistic regression: 0 or 1?
 
+![alt ext](https://cdn-images-1.medium.com/max/1600/1*aetAOm7gZEhnAfJzI4gl9A.png)
+
 Logistic regression is a method of classification: the model outputs the probability of a categorical target variable Y belonging to a certain class.
 
 To predict the Y label — spam/not spam, cancer/not cancer, fraud/not fraud, etc. — you have to set a probability cutoff, or threshold
