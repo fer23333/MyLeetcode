@@ -189,3 +189,10 @@ CNNs are designed specifically for taking images as input, and are effective for
 RNNs have a sense of built-in memory and are well-suited for language problems. They’re also important
 in reinforcement learning since they enable the agent to keep track of where things are and what happened historically even when those elements aren’t all visible at once. Christopher Olah wrote an excellent walkthrough of RNNs and LSTMs in the context of language problems.
 
+
+# Reinforcement Learning
+
+1. The exploration/exploitation tradeoff
+2. Markov Decision Processes (MDPs), the classic setting for RL tasks
+3. Q-learning, policy learning, and deep reinforcement learning
+4. and lastly, the value learning problem
