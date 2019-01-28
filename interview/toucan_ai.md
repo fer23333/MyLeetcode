@@ -82,3 +82,40 @@ The distance to the nearest point on either side of the line is called the margi
 1. Soften the definition of “separate”.
 
 2. Throw the data into higher dimensions.
+
+## supervised learning part iii:
+
+Non-parametric learners
+
+### k-nearest neighbors (k-NN)
+k-NN seems almost too simple to be a machine learning algorithm. The idea is to label a test data point x by finding the mean (or mode) of the k closest data points’ labels.
+
+The fact that k-NN doesn’t require a pre-defined parametric function f(X) relating Y to X makes it well-suited for situations where the relationship is too complex to be expressed with a simple linear model.
+
+### Decision trees, random forests
+决策树 多叉树 算信息熵 离散化数据 然后做aggregate 防止过拟合
+![alt text](https://cdn-images-1.medium.com/max/1600/0*Rin05YSBfRZBlCxI.)
+![alt text](https://cdn-images-1.medium.com/max/1600/0*bZ2NR-JYpcYhb3WJ.)
+
+There are many other clever ensemble models that combine decision trees and yield excellent performance — check out XGBoost (Extreme Gradient Boosting) as an example.
+
+# unsupervised learning
+
+“unsupervised” because you start with unlabeled data
+
+extract feature
+
+The two unsupervised learning tasks we will explore are clustering the data into groups by similarity and reducing dimensionality to compress the data while maintaining its structure and usefulness.
+
+### k-means clustering
+
+The goal of clustering is to create groups of data points such that points in different clusters are dissimilar while points within a cluster are similar.
+
+With k-means clustering, we want to cluster our data points into k groups. A larger k creates smaller groups with more granularity, a lower k means larger groups and less granularity.
+
+The output of the algorithm would be a set of “labels” assigning each data point to one of the k groups. In k-means clustering, the way these groups are defined is by creating a centroid for each group. The centroids are like the heart of the cluster, they “capture” the points closest to them and add them to the cluster.
+![alt text](https://cdn-images-1.medium.com/max/1600/0*i8ErSXipZpjNWjk4.)
+### Hierarchical clustering
+
+### Dimensionality reduction
+
