@@ -58,6 +58,16 @@ As in the case of linear regression, we use gradient descent to learn the beta p
 
 In logistic regression, the cost function is basically a measure of how often you predicted 1 when the true answer was 0, or vice versa. Below is a regularized cost function just like the one we went over for linear regression.
 ![alt text](https://cdn-images-1.medium.com/max/1600/1*Tn4B-RYmcb45YsEiZM5Ktg.png)
+
 ### Support vector machines (SVMs)
+It typically solves the same problem as logistic regression — classification with two classes — and yields similar performance. It’s worth understanding because the algorithm is geometrically motivated in nature, rather than being driven by probabilistic thinking.
 
+A few examples of the problems SVMs can solve:
 
+Is this an image of a cat or a dog?
+Is this review positive or negative?
+Are the dots in the 2D plane red or blue?
+
+We’ll use the third example to illustrate how SVMs work. Problems like these are called toy problems because they’re not real — but nothing is real, so it’s fine.
+
+![alt text](https://cdn-images-1.medium.com/max/1600/0*uqvkhDvtLXy9lZG6.)
