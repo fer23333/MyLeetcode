@@ -5,3 +5,5 @@ Some experience with Natural Language Processing, either research or practical
 Experience coding in Python
 Familiar with modern machine learning & deep learning techniques (ideally, but not necessarily, in the PyTorch framework)
 Preferably familiar with a React-based web-development stack 
+
+Integrated a live chatting robot trained with Tensorflow and NLP model with LSTM for real-time customer service.
