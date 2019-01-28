@@ -51,6 +51,10 @@ The *threshold* depends on your tolerance for false positives vs. false negative
 
 ### Minimizing loss with logistic regression
 
+As in the case of linear regression, we use gradient descent to learn the beta parameters that minimize loss.
+
+In logistic regression, the cost function is basically a measure of how often you predicted 1 when the true answer was 0, or vice versa. Below is a regularized cost function just like the one we went over for linear regression.
+![alt text](https://cdn-images-1.medium.com/max/1600/1*Tn4B-RYmcb45YsEiZM5Ktg.png)
 ### Support vector machines (SVMs)
 
 
