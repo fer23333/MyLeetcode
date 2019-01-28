@@ -1,13 +1,16 @@
 # word ladder
-BFS
-
-ii
-
-find all shortest transformation sequence(s) from beginWord to endWord, such that:
+i
+find the length of shortest transformation sequence such that:
 
 Only one letter can be changed at a time
 
 Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
+
+BFS
+
+ii
+find all shortest transformation sequence(s) from beginWord to endWord, 
+
 
 ```
       a
