@@ -16,6 +16,7 @@ Integrated a live chatting robot trained with Tensorflow and NLP model with LSTM
  2.classification 
 
 
+## supervised learning part i:
 
 ### Linear regression (ordinary least squares)
 
@@ -31,4 +32,25 @@ to avoid that
 1. Use more training data. The more you have, the harder it is to overfit the data by learning too much from any single training example.
 
 2. Use regularization. Add in a penalty in the loss function for building a model that assigns too much explanatory power to any one feature or allows too many features to be taken into account.
+
+
+## supervised learning part ii:
+
+### Classification: predicting :
+Classification predicts a discrete target label Y. Classification is the problem of assigning new observations to the class to which they most likely belong, based on a classification model built from labeled training data.
+
+The accuracy of your classifications will depend on the effectiveness of the algorithm you choose, how you apply it, and how much useful training data you have.
+
+### a label Logistic regression: 0 or 1?
+
+Logistic regression is a method of classification: the model outputs the probability of a categorical target variable Y belonging to a certain class.
+
+To predict the Y label — spam/not spam, cancer/not cancer, fraud/not fraud, etc. — you have to set a probability cutoff, or threshold
+
+The *threshold* depends on your tolerance for false positives vs. false negatives
+
+### Minimizing loss with logistic regression
+
+### Support vector machines (SVMs)
+
 
