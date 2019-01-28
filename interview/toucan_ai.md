@@ -176,3 +176,5 @@ The input X is, say, a greyscale image represented by a w-by-h matrix of pixel b
 Incredibly, you can use gradient descent in the exact same way that we did with linear regression in Part 2.1 to train these parameters in a way that minimizes loss. So with a lot of examples and a lot of gradient descent, the model can learn how to classify images of animals correctly. And that, in a nutshell’s nutshell, is “deep learning”.
 
 ## Neurons, feature learning, and layers of abstraction
+
+![alt text](https://cdn-images-1.medium.com/max/1600/1*Jyjubgdk41aFI41dT4FY0Q.png)
