@@ -114,8 +114,65 @@ The goal of clustering is to create groups of data points such that points in di
 With k-means clustering, we want to cluster our data points into k groups. A larger k creates smaller groups with more granularity, a lower k means larger groups and less granularity.
 
 The output of the algorithm would be a set of “labels” assigning each data point to one of the k groups. In k-means clustering, the way these groups are defined is by creating a centroid for each group. The centroids are like the heart of the cluster, they “capture” the points closest to them and add them to the cluster.
+
+```
+Here are the steps to k-means clustering:
+1. Define the k centroids. Initialize these at random (there are also fancier algorithms for initializing the centroids that end up converging more effectively).
+2. Find the closest centroid & update cluster assignments. Assign each data point to one of the k clusters. Each data point is assigned to the nearest centroid’s cluster. Here, the measure of “nearness” is a hyperparameter — often Euclidean distance.
+3. Move the centroids to the center of their clusters. The new position of each centroid is calculated as the average position of all the points in its cluster.
+Keep repeating steps 2 and 3 until the centroid stop moving a lot at each iteration (i.e., until the algorithm converges).
+```
 ![alt text](https://cdn-images-1.medium.com/max/1600/0*i8ErSXipZpjNWjk4.)
+
 ### Hierarchical clustering
+Hierarchical clustering is similar to regular clustering, except that you’re aiming to build a hierarchy of clusters. This can be useful when you want flexibility in how many clusters you ultimately want.
+
+```
+Here are the steps for hierarchical clustering:
+1. Start with N clusters, one for each data point.
+2. Merge the two clusters that are closest to each other. Now you have N-1 clusters.
+3. Recompute the distances between the clusters. There are several ways to do this (see this tutorial for more details). One of them (called average-linkage clustering) is to consider the distance between two clusters to be the average distance between all their respective members.
+4. Repeat steps 2 and 3 until you get one cluster of N data points. You get a tree (also known as a dendrogram) like the one below.
+5. Pick a number of clusters and draw a horizontal line in the dendrogram. For example, if you want k=2 clusters, you should draw a horizontal line around “distance=20000.” You’ll get one cluster with data points 8, 9, 11, 16 and one cluster with the rest of the data points. In general, the number of clusters you get is the number of intersection points of your horizontal line with the vertical lines in the dendrogram.
+```
+
+![alt text](https://cdn-images-1.medium.com/max/1600/1*DSrma_nUW4w9NLSccMAeYQ.png)
 
 ### Dimensionality reduction
 
+two common techniques in practice: *principal component analysis and singular value decomposition.*
+Dimensionality reduction looks a lot like compression. This is about trying to reduce the complexity of the data while keeping as much of the relevant structure as possible
+
+#### Principal component analysis (PCA)
+
+To select the most significant principal components, we look at how much of the data’s variance they capture and order them by that metric.
+
+Another way of thinking about this is that PCA remaps the space in which our data exists to make it more compressible. The transformed dimension is smaller than the original dimension.
+
+By making use of the first several dimensions of the remapped space only, we can start gaining an understanding of the dataset’s organization. This is the promise of dimensionality reduction: reduce complexity (dimensionality in this case) while maintaining structure (variance).
+
+#### Singular value decomposition (SVD)
+
+Let’s represent our data like a big A = m x n matrix. SVD is a computation that allows us to decompose that big matrix into a product of 3 smaller matrices 
+
+![alt text](https://cdn-images-1.medium.com/max/1600/0*TOPSIsdW8kCzUTnl.)
+
+
+# Neural Networks & Deep Learning
+```
+Y = f(X) + ϵ
+Training: machine learns f from labeled training data
+Testing: machine predicts Y from unlabeled testing data
+```
+
+The real world is messy, so sometimes f is complicated. In natural language problems large vocabulary sizes mean lots of features. Vision problems involve lots of visual information about pixels. Playing games requires making a decision based on complex scenarios with many possible futures. The learning techniques we’ve covered so far do well when the data we’re working with is not insanely complex, but it’s not clear how they’d generalize to scenarios like these.
+
+Deep learning is really good at learning f, particularly in situations where the data is complex. In fact, artificial neural networks are known as universal function approximators because they’re able to learn any function, no matter how wiggly, with just a single hidden layer.
+
+![alt text](https://cdn-images-1.medium.com/max/1600/1*v-cD3i3sa1uztkQliinImQ.png)
+
+The input X is, say, a greyscale image represented by a w-by-h matrix of pixel brightnesses. The output Y is a vector of class probabilities. This means we have as an output the probability of each class being the correct label. If this neural net is working well, the highest probability should be for the correct class. And the layers in the middle are just doing a bunch of matrix multiplication by summing activations x weights with non-linear transformations (activation functions) after every hidden layer to enable the network to learn a non-linear function.
+
+Incredibly, you can use gradient descent in the exact same way that we did with linear regression in Part 2.1 to train these parameters in a way that minimizes loss. So with a lot of examples and a lot of gradient descent, the model can learn how to classify images of animals correctly. And that, in a nutshell’s nutshell, is “deep learning”.
+
+## Neurons, feature learning, and layers of abstraction
