@@ -50,6 +50,7 @@ Logistic regression is a method of classification: the model outputs the probabi
 To predict the Y label — spam/not spam, cancer/not cancer, fraud/not fraud, etc. — you have to set a probability cutoff, or threshold
 
 The *threshold* depends on your tolerance for false positives vs. false negatives
+![alt ext](https://cdn-images-1.medium.com/max/1600/0*xBLfyr2KkNXajfQp).
 
 ### Minimizing loss with logistic regression
 
