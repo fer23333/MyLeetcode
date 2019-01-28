@@ -196,3 +196,59 @@ in reinforcement learning since they enable the agent to keep track of where thi
 2. Markov Decision Processes (MDPs), the classic setting for RL tasks
 3. Q-learning, policy learning, and deep reinforcement learning
 4. and lastly, the value learning problem
+
+## The exploration/exploitation tradeoff
+
+This brings up the exploration/exploitation tradeoff. One simple strategy for exploration would be for the mouse to take the best known action most of the time (say, 80% of the time), but occasionally explore a new, randomly selected direction even though it might be walking away from known reward.
+
+This strategy is called the epsilon-greedy strategy, where epsilon is the percent of the time that the agent takes a randomly selected action rather than taking the action that is most likely to maximize reward given what it knows so far (in this case, 20%). We usually start with a lot of exploration (i.e. a higher value for epsilon). Over time, as the mouse learns more about the maze and which actions yield the most long-term reward, it would make sense to steadily reduce epsilon to 10% or even lower as it settles into exploiting what it knows.
+
+##  Markov Decision Processes (MDPs)
+
+MDPs include:
+```
+A finite set of states. These are the possible positions of our mouse within the maze.
+
+A set of actions available in each state. This is {forward, back} in a corridor and {forward, back, left, right} at a crossroads.
+
+Transitions between states. For example, if you go left at a crossroads you end up in a new position. These can be a set of probabilities that link to more than one possible state (e.g. when you use an attack in a game of Pokémon you can either miss, inflict some damage, or inflict enough damage to knock out your opponent).
+
+Rewards associated with each transition. In the robot-mouse example, most of the rewards are 0, but they’re positive if you reach a point that has water or cheese and negative if you reach a point that has an electric shock.
+
+A discount factor γ between 0 and 1. This quantifies the difference in importance between immediate rewards and future rewards. For example, if γ is .9, and there’s a reward of 5 after 3 steps, the present value of that reward is .9³*5.
+
+Memorylessness. Once the current state is known, the history of the mouse’s travels through the maze can be erased because the current Markov state contains all useful information from the history. In other words, “the future is independent of the past given the present”.
+```
+
+![alt text](https://cdn-images-1.medium.com/max/1600/0*qHo_9UFMQd7kJlr2.)
+
+we are trying to max the reward
+Let’s look at this sum term by term. First of all, we’re summing across all time steps t. Let’s set γ at 1 for now and forget about it. r(x,a) is a reward function. For state x and action a (i.e., go left at a crossroads) it gives you the reward associated with taking that action a at state x. Going back to our equation, we’re trying to maximize the sum of future rewards by taking the best action in each state.
+
+
+
+## Q-learning: learning the action-value function
+
+Q-learning is a technique that evaluates which action to take based on an action-value function that determines the value of being in a certain state and taking a certain action at that state.
+
+We have a function Q that takes as an input one state and one action and returns the expected reward of that action (and all subsequent actions) at that state. Before we explore the environment, Q gives the same (arbitrary) fixed value. But then, as we explore the environment more, Q gives us a better and better approximation of the value of an action a at a state s. We update our function Q as we go.
+
+```
+Learning rate alpha: this is how aggressive we want to be when updating our value. When alpha is close to 0, we’re not updating very aggressively. When alpha is close to 1, we’re simply replacing the old value with the updated value.
+
+The reward is the reward we got by taking action at at state st. So we’re adding this reward to our old estimate.
+
+We’re also adding the estimated future reward, which is the maximum achievable reward Q for all available actions at xt+1.
+
+Finally, we subtract the old value of Q to make sure that we’re only incrementing or decrementing by the difference in the estimate (multiplied by alpha of course).
+```
+
+Now that we have a value estimate for each state-action pair, we can select which action to take according to our action-selection strategy (we don’t necessarily just choose the action that leads to the most expected reward every time, e.g. with an epsilon-greedy exploration strategy we’d take a random action some percentage of the time).
+
+In the robot mouse example, we can use Q-learning to figure out the value of each position in the maze and the value of the actions {forward, backward, left, right} at each position. Then we can use our action-selection strategy to choose what the mouse actually does at each time step.
+
+
+## Policy learning: a map from state to action
+
+Policy learning is a more straightforward alternative in which we learn a policy function, π, which is a direct map from each state to the best corresponding action at that state. Think of it as a behavioral policy: “when I observe state s, the best thing to do is take action a”. For example, an autonomous vehicle’s policy might effectively include something like: “if I see a yellow light and I am more than 100 feet from the intersection, I should brake. Otherwise, keep moving forward.”
+
