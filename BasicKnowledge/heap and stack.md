@@ -1,6 +1,8 @@
 # Heap
 
-## heap remove是O(n) 寻找该数需要O(n) 但使用一个hashmap key: key, value: nodevalue就可以
+*heap remove是O(n) 寻找该数需要O(n) 但使用一个hashmap key: key, value: node value就可以*
+heap构建需要o(n) 边new 边heapy 
+
 
 Java Heap space is used by java runtime to allocate memory to Objects and JRE classes. 
 
