@@ -23,3 +23,7 @@ the submatrix with the largest possible sum is:
 
 submatrix sum
 找到和为0的submatrix
+
+将matrix按裂求和压扁成一维array，for循环上下边界，一共有Cn2共n2种可能性
+再在一维array中按照subarray sum方法做, O(n)
+所以总时间O(n2 x n) = O(n3)
