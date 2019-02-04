@@ -5,7 +5,9 @@ Given a binary tree, find the subtree with minimum sum. Return the root of the s
 然后用分治法来遍历整棵树。
 一个小弟找左子数的sum，一个小弟找右子树的sum。
 同时，我们根据算出来的当前树的sum决定要不要更新result。
+使用一个全局变量记录最小的result 在递归中return是局部变量curResult
 当遍历完整棵树的时候，result里记录的就是拥有最小sum的子树的信息
+https://www.youtube.com/watch?v=uly6ml2PZd0
 
 class ResultType{
     TreeNode node;
