@@ -20,10 +20,10 @@ class NumArray {
     //    0-5 2-5 0-1 2-3 4-5    1 2 4 3 5 7
     //  0 1    2   3   4  5      0 1 2 3 4 5  index
     //                           6 7 8 9 10 11
-    //              '22'
-    //      '7'           '15'  
-    //  '3'   4      '8'      7
-    //1     2       3  5 
+    //             '22'
+    //    '3'               '19'
+    //  1    2        '7'        '12'      
+    //              4    3     5     7
     private int[] tree;
     private int size;
     public NumArray(int[] nums) {
