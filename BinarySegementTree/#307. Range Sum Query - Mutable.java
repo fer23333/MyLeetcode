@@ -14,7 +14,6 @@ Segment Tree can be broken down to the three following steps:
 //使用树的方法建立 来自九章答案 代码很长
   
 // 使用数组的方法建立
-  
 class NumArray {
 
     //    0-5 2-5 0-1 2-3 4-5    1 2 4 3 5 7
@@ -24,6 +23,7 @@ class NumArray {
     //    '3'               '19'
     //  1    2        '7'        '12'      
     //              4    3     5     7
+    //  
     private int[] tree;
     private int size;
     public NumArray(int[] nums) {
@@ -37,6 +37,8 @@ class NumArray {
     public void update(int i, int val) {
         i += size;
         tree[i] = val;
+        //i在1的位置没有值 所以只需到i>0
+        //左子树为偶数index  右子树为奇数index
         while(i>0){
             //从底至上更新节点
             int left = i;
@@ -59,7 +61,7 @@ class NumArray {
         j += size;
         int sum =0;
         //fix成i在左子树 j在右子树的结构
-        while(i <= j){
+        while(i < j){
             if(i % 2 != 0){
                 //i不在左子树 在右子树上
                 sum += tree[i];
