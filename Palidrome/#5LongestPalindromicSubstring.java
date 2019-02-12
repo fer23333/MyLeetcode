@@ -8,28 +8,28 @@ O(n2) O(1)
 对于奇数形式的，我们就从遍历到的位置为中心，向两边进行扩散，对于偶数情况，我们就把当前位置和下一个位置当作偶数行回文的最中间两个字符，
 然后向两边进行搜索
  
- private int lo, maxLen;
-
+    private String res = "";
     public String longestPalindrome(String s) {
-        int len = s.length();
-        if (len < 2)
+        if(s == null || s.length() <2 ){
             return s;
-
-        for (int i = 0; i < len-1; i++) {
-            extendPalindrome(s, i, i);  //assume odd length, try to extend Palindrome as possible
-            extendPalindrome(s, i, i+1); //assume even length.
         }
-        return s.substring(lo, lo + maxLen);
+        
+        for(int i=0; i< s.length(); i++){
+            extend(s, i, i );
+            extend(s, i, i+1);
+        }
+        return res;
+        
     }
-
-    private void extendPalindrome(String s, int j, int k) {
-        while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {
-            j--;
-            k++;
+    public void extend(String s,int left, int right){
+        while(left>=0 && right < s.length() && s.charAt(left) == s.charAt(right)){
+            left--;
+            right++;
         }
-        if (maxLen < k - j - 1) {
-            lo = j + 1;
-            maxLen = k - j - 1;
+     //由于会多做一步直到交叉 所以substring(left+1, right) 开区间
+        String cur = s.substring(left+1, right);
+        if(cur.length() > res.length()){
+            res = cur;
         }
     }
 
