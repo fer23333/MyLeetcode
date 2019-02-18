@@ -1,1 +1,74 @@
 
+class Trie {
+    private class TrieNode{
+        private Map<Character, TrieNode> children;
+        private boolean isEnd;
+        public TrieNode(){
+            this.children = new HashMap<>();
+            this.isEnd = false;
+        }
+    }
+    /** Initialize your data structure here. */
+    private TrieNode root;
+    
+    public Trie() {
+        root = new TrieNode();
+    }
+    
+    /** Inserts a word into the trie. */
+    public void insert(String word) {
+        TrieNode curNode = root;
+        if(word == null || word.length() == 0){
+            return;
+        }
+        for(int i=0; i< word.length(); i++){
+            char curChar = word.charAt(i);
+            if(!curNode.children.containsKey(curChar)){
+                curNode.children.put(curChar, new TrieNode());
+            }
+            curNode = curNode.children.get(curChar);
+        }
+        curNode.isEnd = true;
+    }
+    
+    /** Returns if the word is in the trie. */
+    public boolean search(String word) {
+        TrieNode curNode = root;
+        if(word == null || word.length() == 0){
+            return true;
+        }
+        for(int i =0; i< word.length(); i++){
+            char curChar = word.charAt(i);
+            if(!curNode.children.containsKey(curChar)){
+                return false;
+            }
+            curNode = curNode.children.get(curChar);
+        }
+        return curNode.isEnd;
+        
+    }
+    
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    public boolean startsWith(String prefix) {
+        TrieNode curNode = root;
+        if(prefix == null || prefix.length() == 0){
+            return true;
+        }
+        for(int i =0; i< prefix.length(); i++){
+            char curChar = prefix.charAt(i);
+            if(!curNode.children.containsKey(curChar)){
+                return false;
+            }
+            curNode = curNode.children.get(curChar);
+        }
+        return true;
+    }
+}
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie obj = new Trie();
+ * obj.insert(word);
+ * boolean param_2 = obj.search(word);
+ * boolean param_3 = obj.startsWith(prefix);
+ */
