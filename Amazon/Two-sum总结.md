@@ -214,9 +214,32 @@ O(nlogn) O(1)
     }
 ```
 ## 7. two sum greater-than-target 
-return all pairs
 
+排序之后 相向双指针 
+
+```
 Input: [1, 1, 1, 1], target = 1
 Output: 6
 //Do it in O(1) extra space and O(nlogn) time.
-
+```
+```
+   public int twoSum2(int[] nums, int target) {
+        // write your code here
+        if(nums == null || nums.length ==0){
+            return 0;
+        }
+        Arrays.sort(nums);
+        int i = 0; 
+        int j = nums.length -1;
+        int count =0;
+        while(i<j){
+            if(nums[i]+nums[j] > target){
+                count += j-i;
+                j--;
+            }else{
+                i++;
+            }
+        }
+        return count;
+    }
+```
