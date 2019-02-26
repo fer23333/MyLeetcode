@@ -202,12 +202,13 @@ O(nlogn) O(1)
             if(!matched.contains(nums[i]) && dic.contains(target - nums[i])){
                 List<Integer> list = new ArrayList<>();
                 matched.add(nums[i]);
+                matched.add(target - nums[i]);
                 list.add(nums[i]);
                 list.add(target - nums[i]);
                 result.add(list);
-            }else{
-                dic.add(nums[i]);
             }
+                dic.add(nums[i]);
+            
         }
         return result;
     }
