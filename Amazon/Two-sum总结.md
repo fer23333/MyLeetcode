@@ -213,7 +213,7 @@ O(nlogn) O(1)
         return result;
     }
 ```
-## 7. two sum greater-than-target 
+## 6. two sum greater-than-target 
 
 排序之后 相向双指针 
 
@@ -243,3 +243,71 @@ Output: 6
         return count;
     }
 ```
+
+## 7 Two Sum - Difference equals to target
+Given an array of integers, find two numbers that their difference equals to a target value.
+
+where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are NOT zero-based.
+
+It's guaranteed there is only one available solution
+
+要求输出结果要排好序 然后当前的index所在value不会存进map 
+
+```
+   public int[] twoSum7(int[] nums, int target) {
+        // write your code here
+        if(nums == null || nums.length <2){
+            return new int[2];
+        }
+        int[] res= new int[2];
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i =0;i<nums.length; i++){
+            if(map.containsKey(target + nums[i])){
+                res[0] =  map.get(target +nums[i]);
+                res[1] =  i+1;
+                break;
+            }
+            if(map.containsKey(nums[i]- target)){
+                res[0] = map.get(nums[i]- target);
+                res[1] = i+1;
+                break;
+            }
+            map.put(nums[i], i+1);
+        }
+        return res;
+    }
+```
+
+## 8 Two Sum - Closest to target
+Given an array nums of n integers, find two integers in nums such that the sum is closest to a given number, target.
+
+Return the difference between the sum of the two integers and the target.
+
+也有可能return 这两个 integer
+
+
+    public int twoSumClosest(int[] nums, int target) {
+        // write your code here
+        if(nums == null || nums.length < 2){
+            return -1;
+        }
+        Arrays.sort(nums);
+        int diff = Integer.MAX_VALUE;
+        int left =0;
+        int right = nums.length -1;
+        while(left < right){
+            int curSum = nums[left] + nums[right];
+            if(curSum == target){
+                return 0;
+            }else if(curSum > target){
+                diff = Math.min(diff, curSum - target);
+                right--;
+                
+            }else{
+                diff = Math.min(diff, target - curSum);
+                left++;
+            }
+            
+        }
+        return diff;
+    }
