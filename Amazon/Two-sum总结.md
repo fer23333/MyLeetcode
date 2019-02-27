@@ -311,3 +311,51 @@ Return the difference between the sum of the two integers and the target.
         }
         return diff;
     }
+
+# 9 Triangle count 
+两边之和大于第三边 
+
+k >j > i => a[j] + a[k] > a[i]
+```
+O(n3)
+i 0->n
+ j 0->i
+  k 0->j
+   if(a[j] + a[k] > target)
+    count++
+```
+
+```
+O(n2)
+利用 第#6 题
+    public int triangleCount(int[] S) {
+        // write your code here
+        if(S == null || S.length < 3){
+            return 0;
+        }
+        Arrays.sort(S);
+        int n = S.length -1;
+        int count = 0;
+        for(int i = n; i>=2 ; i--){
+            int left = 0; 
+            int right = i-1;
+            while(left < right){
+                if(S[left] + S[right] > S[i]){
+                    count += right - left;
+                    right--;
+                }else{
+
+                    left++;
+                }
+            }
+        }
+        return count;
+    }
+```            
+
+# 10 3 Sum
+
+```
+O(n2)
+
+```
