@@ -355,7 +355,48 @@ O(n2)
 
 # 10 3 Sum
 
+注意对 fix的数要去重
+
+对两边移动的pointer也要去重
+
+并不是twosum的直接演化 可以加入set来去重 但比较复杂
+
+
 ```
 O(n2)
-
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        if(nums == null || nums.length < 3){
+            return new ArrayList<>();
+        }
+        List<List<Integer>> result = new ArrayList<>();
+        int n = nums.length -1;
+        Arrays.sort(nums);
+        for(int i = n; i>=2; i--){
+            if(i<n && nums[i] == nums[i+1]){
+                continue;
+            }
+            int left = 0;
+            int right = i-1;
+            while(left < right){
+                if(nums[left] + nums[right] == -nums[i]){
+                    result.add(Arrays.asList(nums[left], nums[right], nums[i]));
+                    while(left<right && nums[left] == nums[left+1]){
+                        left++;
+                    }
+                    while(left<right && nums[right] == nums[right-1]){
+                        right--;
+                    }
+                    left++;
+                    right--;
+                }else if(nums[left] + nums[right] > -nums[i]){
+                    right--;
+                }else{
+                    left++;
+                }
+            }
+        }
+        return result;
+    }
+}
 ```
