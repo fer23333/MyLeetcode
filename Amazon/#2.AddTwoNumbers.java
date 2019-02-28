@@ -10,6 +10,10 @@
 
 // 最后判定 carry为1 加最高位1
 
+//从数字尾部往前
+//Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+// Output: 7 -> 0 -> 8
+// Explanation: 342 + 465 = 807.
 
 ```
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
