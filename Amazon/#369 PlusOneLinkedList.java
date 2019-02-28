@@ -25,4 +25,35 @@
         return dummy;    
     }
     
-   //也可以使用
+   //也可以使用栈来存
+    public ListNode plusOne(ListNode head) {
+        // Write your code here
+        if (head == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        
+        Stack<ListNode> stack = new Stack<>();
+        while (head != null) {
+            stack.push(head);
+            head = head.next;
+        }
+        
+        head = stack.pop();
+        while (head.val == 9 && stack.size() != 0) {
+            head.val = 0;
+            head = stack.pop();
+        }
+        
+        if (head.val == 9) {
+            head.val = 0;
+            ListNode newHead = new ListNode(1);
+            newHead.next = dummy.next;
+            dummy.next = newHead;
+        } else {
+            head.val += 1;
+        }
+        
+        return dummy.next;
+    }
