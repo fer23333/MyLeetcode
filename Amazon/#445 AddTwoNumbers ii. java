@@ -1,2 +1,43 @@
 //由于不能反转链表 也不能改变原来的链表结构 
 //使用stack先进后出的特点 先存进stack 再一个一个取出来
+
+
+//从尾部往前 prev节点的next为cur 
+//Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
+//Output: 7 -> 8 -> 0 -> 7
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        Deque<ListNode> stack1 = new ArrayDeque<>();
+        Deque<ListNode> stack2 = new ArrayDeque<>();
+        while(l1 != null){
+            stack1.push(l1);
+            l1 = l1.next;
+        }
+        while(l2 != null){
+            stack2.push(l2);
+            l2 = l2.next;
+        }
+        ListNode head =  null;
+        
+        int carry = 0;
+        while(!stack1.isEmpty() || !stack2.isEmpty()){
+            
+            ListNode v1 = !stack1.isEmpty() ? stack1.pop() : null;
+            ListNode v2 = !stack2.isEmpty() ? stack2.pop() : null;
+            
+            int d1 = v1 != null ? v1.val : 0;
+            int d2 = v2 != null ? v2.val : 0;
+            
+            int sum = d1 + d2 + carry;
+            ListNode prev = new ListNode(sum % 10);
+            prev.next = head;
+            head = prev;
+            carry = sum/10;
+        }
+        if(carry == 1){
+            ListNode prev = new ListNode(1);
+            prev.next = head;
+            head = prev;
+        }
+        return head;
+    }
