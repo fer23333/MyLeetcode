@@ -39,10 +39,8 @@ add or remove an entry in front of the lru cache O(1) -doubly linkedlist
 class LRUCache {
     
     class Node{
-        int key;
-        int value;
-        Node prev;
-        Node next;
+        int key, value;
+        Node next, prev;
         public Node(int key, int value){
             this.key = key;
             this.value = value;
@@ -50,54 +48,53 @@ class LRUCache {
     }
     
     private Map<Integer, Node> map;
-    private int cap;
     private Node head = new Node(-1,-1);
     private Node tail = new Node(-1,-1);
+    private int cap;
     
     public LRUCache(int capacity) {
         map = new HashMap<>();
-        cap = capacity;
         head.next = tail;
         tail.prev = head;
+        cap = capacity;
     }
     
     public int get(int key) {
-        if(map.containsKey(key)){
-            Node cur = map.get(key);
-            //remove
-            cur.prev.next = cur.next;
-            cur.next.prev = cur.prev;
-            moveToTail(cur);
-            return cur.value;
-        }else{
+        if(!map.containsKey(key)){
             return -1;
         }
+        //remove and move to tail then return value
+        Node cur = map.get(key);
+        cur.prev.next = cur.next;
+        cur.next.prev = cur.prev;
+        addToTail(cur);
+        return map.get(key).value;
     }
     
     public void put(int key, int value) {
         if(get(key) != -1){
-            map.get(key).value = value;
+            map.get(key).value = value;        
         }else{
+            //larger thean cap, remove least used element
             if(map.size() == cap){
+                //revmoe head.next
                 map.remove(head.next.key);
                 head.next = head.next.next;
                 head.next.prev = head;
             }
-            Node cur = new Node(key, value);
-            map.put(key, cur);
-            moveToTail(cur);
-        } 
+            Node insert = new Node(key,value);
+            addToTail(insert);
+            map.put(key, insert);
+        }
+        
     }
     
-    public void moveToTail(Node cur){
-        
-        cur.prev = tail.prev;
-        tail.prev.next = cur;
-        
-        tail.prev = cur;
-        cur.next =tail;
+    public void addToTail(Node node){
+        node.prev = tail.prev;
+        tail.prev.next = node;
+        tail.prev = node;  
+        node.next = tail;       
     }
-
 }
 
 /**
