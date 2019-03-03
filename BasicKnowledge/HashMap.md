@@ -56,3 +56,11 @@ JDK 1.8：
 注：HashMap中其实允许null作为key，因为在get/put操作时都会对null值做特殊的处理。
 ```
 
+```
+collision
+the general amortised complexity of O(1)
+O(n/m)It has already been mentioned that hashmaps are O(n/m) in average, if n is the number of items and m is the size.
+a bad hashCode() implementation could result to multiple collisions, which means that in the worst case every object goes to the same bucket, thus O(N) if each bucket is backed by a List.
+since Java 8 HashMap dynamically replaces the Nodes (linked list) used in each bucket with TreeNodes (red-black tree when a list gets bigger than 8 elements) resulting to a worst performance of O(logN).
+```
+
