@@ -2,6 +2,7 @@
 // 如果mid < left 说明右半部分单调递增 判定target是否在此区间 
 //一定要使用闭区间 判定 target 是否在 两端时也相等, 否则会挑错区间
 // 没有rotated的情况就是一直 mid < left
+//time O(logn)
 public int search(int[] nums, int target) {
         if(nums == null || nums.length == 0){
             return -1;
