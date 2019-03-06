@@ -1,4 +1,9 @@
-private int maxLen,low;
+//time O(n2) 
+
+//O(n) time Manacher algorithm
+
+
+    private int maxLen,low;
     public String longestPalindrome(String s) {
         if(s == null || s.length()  == 0){
             return "";
