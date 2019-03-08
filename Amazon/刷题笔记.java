@@ -35,7 +35,7 @@ sliding window 会告诉你窗口大小 k
  
  21MergeTwoSortedList 设置dummy Node 然后 链接较小节点 小心节点为null
  23MergeKSortedList 
- 88Merge Sorted Array
+ 88Merge Sorted Array [4 5 6 0 0 0] [1 2 3] -> 从末尾的数开始往前比较 注意比较完成后 要再以短数组继续遍历
 
 
 
