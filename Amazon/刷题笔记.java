@@ -26,6 +26,16 @@ sliding window 会告诉你窗口大小 k
 
 #3longest substring without repeating characets abcabcbb -> abc 
  使用set记录, 或者 map记录 index 再找 最近的重复数字 往后一位继续, map可以换成 array字典
+ 
+ 
+ 56MergeInterval 排序之后 设置 start end 如果新的start 比end 小, end更新为较大值. 其他情况时再加入result 记住加入最后一组值
+ MeetingRoomsi
+ MeetingRoomsii
+ 
+ 
+ 21MergeTwoSortedList 设置dummy Node 然后 链接较小节点 小心节点为null
+ 23MergeKSortedList 
+ 88Merge Sorted Array
 
 
 
