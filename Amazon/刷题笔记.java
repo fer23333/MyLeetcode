@@ -5,7 +5,8 @@ Largest Rectangle in Histogram 也可以单调栈 tbd
 
 #5longest palidrome substring  从中间向两边扩展 并取 low index 和 maxLen 最后返回substring  ababb -> aba 或者 bab
 
-maximum subarray sum
+maximum subarray 初始化cur,max 为0, min 看该数如果加上前面一段会不会变大
+best time to buy sell 可以由max subarray 改变 计算profit的best 如果profit为负 就赋值为0 所以initial的值都为0
 subarray sum equals to k preSum 双指针O(n2), presum + hashmap 类似twosum O(n) 注意 initial put(0,1)
 
 minimum size subarray sum 窗口类 指针移动  不同于 sliding window
