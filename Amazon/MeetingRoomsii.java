@@ -1,7 +1,7 @@
 //类似天上多少飞机的题 sort 
 // checking how many meetings begin before the earliest-ended meeting ends.
 //推荐写法 如果会议开始时 结束时间没到 就要加会议室, 如果会议开始时 结束时间已经过了 说明一个会议结束 可以使用这个会议室 count就不用再增加 
-//
+// 使用了 图论的扫描线算法
 //  start  | |    |  |
  //  end        |   |  | |
     public int minMeetingRooms(Interval[] intervals) {
