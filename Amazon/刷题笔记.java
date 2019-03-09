@@ -5,9 +5,8 @@ Largest Rectangle in Histogram 也可以单调栈 tbd
 
 #5longest palidrome substring  从中间向两边扩展 并取 low index 和 maxLen 最后返回substring  ababb -> aba 或者 bab
 
-
 maximum subarray sum
-subarray sum equals to k
+subarray sum equals to k preSum 双指针O(n2), presum + hashmap 类似twosum O(n) 注意 initial put(0,1)
 
 minimum size subarray sum 窗口类 指针移动  不同于 sliding window
 他要找一个满足窗口的大小 
@@ -29,15 +28,23 @@ sliding window 会告诉你窗口大小 k
  
  
  56MergeInterval 排序之后 设置 start end 如果新的start 比end 小, end更新为较大值. 其他情况时再加入result 记住加入最后一组值
- MeetingRoomsi
- MeetingRoomsii
+ 57InsertInterval 遍历区间 找到插入点 一边合并 新区间 最后再插入, 也可以 先找到插入点 插入后在合并 
+ MeetingRoomsi 判定能否参加会议  排序(start)找交集
+ MeetingRoomsii 扫描线算法 对start end都排序 
  
  
  21MergeTwoSortedList 设置dummy Node 然后 链接较小节点 小心节点为null
  23MergeKSortedList 
  88Merge Sorted Array [4 5 6 0 0 0] [1 2 3] -> 从末尾的数开始往前比较 注意比较完成后 要再以短数组继续遍历
+ Lintcode merge sorted interval list
+ 
 
 
+347 topk frequent numbers 692 topk frequent words bucket sort, priorityqueue, TreeMap
+451. Sort Characters By Frequency
+
+kthlargest priorityqueue, quickselect
+kth smallets in a matrix
 
 
 
