@@ -28,6 +28,7 @@
     }
     
     //bucket sort O(n) bucket里面放数字 index表示频率
+//注意 bucket可能为空 initial时需要new  查找时 需要略过
     
         public List<Integer> topKFrequent(int[] nums, int k) {
         if(nums == null || nums.length == 0){
