@@ -27,6 +27,9 @@ sliding window 会告诉你窗口大小 k
 #3longest substring without repeating characets abcabcbb -> abc 
  使用set记录, 或者 map记录 index 再找 最近的重复数字 往后一位继续, map可以换成 array字典
  
+ 438Find all anagram in a string sliding window+ hashtable
+242valid anagram 先问清 输入包含哪些? ascaii? 大小写? unicode要更大一个范围 使用array 做hashmap
+49 group anagram
  
  56MergeInterval 排序之后 设置 start end 如果新的start 比end 小, end更新为较大值. 其他情况时再加入result 记住加入最后一组值
  57InsertInterval 遍历区间 找到插入点 一边合并 新区间 最后再插入, 也可以 先找到插入点 插入后在合并 
