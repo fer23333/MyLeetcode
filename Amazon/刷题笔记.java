@@ -22,31 +22,33 @@ for(int i->n){
   }
   更新状态
 }
-sliding window 会告诉你窗口大小 k
 
+sliding window 会告诉你窗口大小 k
 #3longest substring without repeating characets abcabcbb -> abc 
- 使用set记录, 或者 map记录 index 再找 最近的重复数字 往后一位继续, map可以换成 array字典
+使用set记录, 或者 map记录 index 再找 最近的重复数字 往后一位继续, map可以换成 array字典
+minimum window substring
+longest-substring-with-at-most-two-distinct-characters/
+438Find all anagram in a string sliding window+ hashtable
  
- 438Find all anagram in a string sliding window+ hashtable
 242valid anagram 先问清 输入包含哪些? ascaii? 大小写? unicode要更大一个范围 使用array 做hashmap
 49 group anagram
  
- 56MergeInterval 排序之后 设置 start end 如果新的start 比end 小, end更新为较大值. 其他情况时再加入result 记住加入最后一组值
- 57InsertInterval 遍历区间 找到插入点 一边合并 新区间 最后再插入, 也可以 先找到插入点 插入后在合并 
- MeetingRoomsi 判定能否参加会议  排序(start)找交集
- MeetingRoomsii 扫描线算法 对start end都排序 
- 
- 
- 21MergeTwoSortedList 设置dummy Node 然后 链接较小节点 小心节点为null
- 23MergeKSortedList 
- 88Merge Sorted Array [4 5 6 0 0 0] [1 2 3] -> 从末尾的数开始往前比较 注意比较完成后 要再以短数组继续遍历
- Lintcode merge sorted interval list
- 
+56MergeInterval 排序之后 设置 start end 如果新的start 比end 小, end更新为较大值. 其他情况时再加入result 记住加入最后一组值
+57InsertInterval 遍历区间 找到插入点 一边合并 新区间 最后再插入, 也可以 先找到插入点 插入后在合并 
+MeetingRoomsi 判定能否参加会议  排序(start)找交集
+MeetingRoomsii 扫描线算法 对start end都排序 
+
+
+21MergeTwoSortedList 设置dummy Node 然后 链接较小节点 小心节点为null
+23MergeKSortedList 
+88Merge Sorted Array [4 5 6 0 0 0] [1 2 3] -> 从末尾的数开始往前比较 注意比较完成后 要再以短数组继续遍历
+Lintcode merge sorted interval list
+
 
 
 347 topk frequent numbers 692 topk frequent words bucket sort, priorityqueue, TreeMap
 451. Sort Characters By Frequency 直接使用最大堆或者bucket sort
- 
+
 kthlargest priorityqueue, quickselect
 kth smallets in a matrix
 
