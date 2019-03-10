@@ -42,8 +42,8 @@ sliding window 会告诉你窗口大小 k
 
 
 347 topk frequent numbers 692 topk frequent words bucket sort, priorityqueue, TreeMap
-451. Sort Characters By Frequency
-
+451. Sort Characters By Frequency 直接使用最大堆或者bucket sort
+ 
 kthlargest priorityqueue, quickselect
 kth smallets in a matrix
 
