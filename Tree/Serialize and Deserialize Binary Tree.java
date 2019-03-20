@@ -88,3 +88,59 @@ class Codec{
         return node;
     }
 }
+
+
+//bfs 版本
+
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        if(root == null){
+            return null;
+        }
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        StringBuilder res = new StringBuilder();
+        while(!q.isEmpty()){
+            int size = q.size();
+            for(int i=0; i< size; i++){
+                TreeNode cur = q.poll();
+                if(cur == null){
+                    res.append("null,");  
+                    continue;
+                }
+                res.append(cur.val + ",");
+                q.offer(cur.left);
+                q.offer(cur.right);
+            }
+        }
+        res.deleteCharAt(res.length() -1);
+        System.out.println(res.toString());
+        return res.toString();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        if(data == null || data.length() == 0){
+            return null;
+        }        
+        Queue<TreeNode> q = new LinkedList<>();
+        String[] node = data.split(",");
+        TreeNode root = new TreeNode(Integer.parseInt(node[0]));
+        q.offer(root);
+        for(int i=1; i< node.length-1; i++){
+            TreeNode cur = q.poll();
+            System.out.println(cur.val);
+            if(!node[i].equals("null")){
+                TreeNode left = new TreeNode(Integer.parseInt(node[i]));
+                cur.left = left;
+                q.offer(left);
+            }
+            if(!node[++i].equals("null")){
+                TreeNode right = new TreeNode(Integer.parseInt(node[i]));
+                cur.right = right;
+                q.offer(right);
+            }
+        }
+        return root;
+    }
