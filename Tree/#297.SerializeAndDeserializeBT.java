@@ -13,19 +13,7 @@ class TreeNode {
 //[1,2,3,null,null,4,5]
 
 class Codec{
-//    public static void main(String[] args) {
-//        // write your code here
-//        TreeNode root = new TreeNode(1);
-//        TreeNode t1 = new TreeNode(2);
-//        TreeNode t2 = new TreeNode(3);
-//        root.left = t1;root.right = t2;
-//        TreeNode t3 = new TreeNode(4);
-//        TreeNode t4  = new TreeNode(5);
-//        t2.left = t3; t2.right = t4;
-//
-//        Codec codec = new Codec();
-//        codec.deserialize(codec.serialize(root));
-//    }
+
     public String serialize(TreeNode root) {
         if(root == null) return "null";
         StringBuilder sb = new StringBuilder();
@@ -45,7 +33,7 @@ class Codec{
     }
 
     // Decodes your encoded data to tree.
-    //使用linkedlist
+    //使用linkedlist(Queue) 用 stack也可以 倒着放进去 每次都pop
     public TreeNode deserialize(String data) {
         if(data == null || data.length() == 0) return null;
         String[] datas = data.split(",");
