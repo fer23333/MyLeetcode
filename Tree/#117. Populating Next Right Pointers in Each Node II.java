@@ -1,3 +1,5 @@
+time O(n), space O(1)
+
 public Node connect(Node root) {
         if(root == null){
             return root;
