@@ -24,6 +24,7 @@ public List<String> generateParenthesis(int n) {
     }
     public void backtracking(List<String> result, String s, int open, int close, int max){
         if(s.length() == max *2){
+					// open == max && close == max
             result.add(s);
             return; 
         }
@@ -37,3 +38,10 @@ public List<String> generateParenthesis(int n) {
             backtracking(result, s+ ")", open, close+1, max);       
         }
     }
+
+n =3
+( ( ( ) ) ) (()())  (())() ()(()) ()()() 
+open 3 
+close 2
+close 0
+        
