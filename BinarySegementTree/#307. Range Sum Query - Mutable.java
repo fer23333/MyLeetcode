@@ -66,7 +66,7 @@ class NumArray {
                 //i不在左子树 在右子树上
                 sum += tree[i];
                 i++;
-                //加上当前的值 并往右走一步到左子树
+                //加上当前的值 并往右走一步到左子树 因为不需要他当前parent的值
             }
             if(j % 2 == 0){
                 //j不在右子树  在左子树上
@@ -76,6 +76,9 @@ class NumArray {
             }
             i/=2;
             j/=2;
+        }
+        if(i == j){
+            sum+= tree[i];
         }
         return sum;
         
@@ -92,10 +95,3 @@ class NumArray {
     
 
 }
-
-/**
- * Your NumArray object will be instantiated and called as such:
- * NumArray obj = new NumArray(nums);
- * obj.update(i,val);
- * int param_2 = obj.sumRange(i,j);
- */
