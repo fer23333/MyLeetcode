@@ -13,6 +13,7 @@
             return res;
         }
         Set<String> visited = new HashSet<>();
+        // 去重 用在 是否加入q, 间接也决定了结果集
         Queue<String> q = new LinkedList<>();
 
         visited.add(s);
