@@ -20,6 +20,7 @@ stringbuilder 和string 在recursion中的区别  https://github.com/fer23333/My
 22. Generate Parentheses 使用backtacking 设置 int open close max 如果open < close 就不是valid, 最后substring.length == max时 return
 301. Remove Invalid Parentheses Time:使用bfs n*2^n, dfs 2^n
 
+3.26 准备面试亚麻啦!!
 
 
 
