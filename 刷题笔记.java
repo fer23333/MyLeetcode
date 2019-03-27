@@ -21,6 +21,12 @@ stringbuilder 和string 在recursion中的区别  https://github.com/fer23333/My
 301. Remove Invalid Parentheses Time:使用bfs n*2^n, dfs 2^n
 
 3.26 准备面试亚麻啦!!
+简历改好了 周四面teletracking 
+3.27
+java基础知识 OOD
+算法: 380 insert remove getRandom O(1) 使用list存 value, map存(val, index) 只删除结尾 如果需要删除的不在结尾 就换位置
+381 380的followup with duplicate 
+
 
 
 
