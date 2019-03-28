@@ -25,7 +25,8 @@ stringbuilder 和string 在recursion中的区别  https://github.com/fer23333/My
 3.27
 java基础知识 OOD
 算法: 380 insert remove getRandom O(1) 使用list存 value, map存(val, index) 只删除结尾 如果需要删除的不在结尾 就换位置
-381 380的followup with duplicate 
+381 380的followup with duplicate 如果改成map<integer,list<integer>> 找到remove数移动最后一位时,最后一位也有可能有多个数的位置 查找就不一定o(1)
+  所以使用hashset存放
 
 
 
