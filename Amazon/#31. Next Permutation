@@ -1,12 +1,16 @@
 //1.从j=n-2开始 遇到递减停下(等于时继续往前走), 若j=-1 则为54321 
 //2. 找到j之前恰好大于他的数i(由于是递减的 所以只要找到就停下 ) 
 //3 swap j和i-1 再对j后面部分排序
+//12462 -> 12642
+//  ** 
+
 class Solution {
     public void nextPermutation(int[] nums) {
         if(nums == null || nums.length < 2){
             return;
         }
         int replace = nums.length-2;
+        //注意一定要有等于
         while(replace >=0 && nums[replace] >= nums[replace+1]){
             replace--;
         }
