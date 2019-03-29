@@ -1,0 +1,30 @@
+//1.从j=n-2开始 遇到递减停下(等于时继续往前走), 若j=-1 则为54321 
+//2. 找到j之前恰好大于他的数i(由于是递减的 所以只要找到就停下 ) 
+//3 swap j和i-1 再对j后面部分排序
+class Solution {
+    public void nextPermutation(int[] nums) {
+        if(nums == null || nums.length < 2){
+            return;
+        }
+        int replace = nums.length-2;
+        while(replace >=0 && nums[replace] >= nums[replace+1]){
+            replace--;
+        }
+        if(replace <0){
+            Arrays.sort(nums);
+            return;
+        }
+        int largerIndex = replace + 1;
+        while(largerIndex < nums.length && nums[largerIndex] > nums[replace]){
+            largerIndex++;
+        }
+        swap(nums, replace, largerIndex-1);
+        Arrays.sort(nums, replace+1, nums.length);
+        return;
+    }
+    public void swap(int[] nums, int l, int r){
+        int temp = nums[l];
+        nums[l] = nums[r];
+        nums[r] = temp;
+    }
+}
