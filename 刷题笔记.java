@@ -27,6 +27,14 @@ java基础知识 OOD
 算法: 380 insert remove getRandom O(1) 使用list存 value, map存(val, index) 只删除结尾 如果需要删除的不在结尾 就换位置
 381 380的followup with duplicate 如果改成map<integer,list<integer>> 找到remove数移动最后一位时,最后一位也有可能有多个数的位置 查找就不一定o(1)
   所以使用hashset存放
+3.28
+tletracking 面完了 发了oa coding+html/javascript+database 工资 7w5+ bounus =8W 现在发展 cloud java anugalr react
+amazon 
+680 valid palidrome ii 删除一个 判定是否是palidrome,双指针 先到不同的位置 再跳过一个left or right 看isvalid
+3.29
+31 next permutation 三步: 1.从j=n-2开始 遇到递减停下(等于时继续), 若j=-1 则为54321 2. 找到j之前恰好大于他的数i(由于是递减的) 3 swap j和i 再对后面部分排序
+
+
 
 
 
