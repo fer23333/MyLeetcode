@@ -44,7 +44,8 @@ amazon
 ood 入门 elevator system
 339. Nested List Weight Sum
 144preorder 非递归解法 只有res.add地方不一样 其他地方一样
-230. Kth Smallest Element in a BST 也可以用inorder 非递归解决 
+230. Kth Smallest Element in a BST 也可以用inorder 非递归解决 --k== 0, return; 
+规律是都在res.add的那个地方操作
 
 
 
