@@ -60,5 +60,6 @@ ood第二节课 desing parking lot
 注意int a = s.charAt(i) - '0' 等价于 int a = Character.getNumericValue(s.charAt(i));
 
 4.2
-
+20 valid parentheses 使用stack else if(stack.isEmpty() || stack.pop() != c) return false; 如果栈为空 说明没有先放入左括号. 如果不相等 说明可能中间有别的括号. 最后判定栈空了没有
+EG: ([)] false, {[]()} true } false
 
