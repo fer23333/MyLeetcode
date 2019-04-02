@@ -42,11 +42,23 @@ amazon
 
 3.30
 ood 入门 elevator system
-339. Nested List Weight Sum
+339. Nested List Weight Sum 和level order 类似 先把第一层的integer 加上 不是integer 就将一层的list加入queue, level++.
 144preorder 非递归解法 只有res.add地方不一样 其他地方一样
 230. Kth Smallest Element in a BST 也可以用inorder 非递归解决 --k== 0, return; 
 规律是都在res.add的那个地方操作
 
+3.31
+修改bq 
+ood第二节课 desing parking lot
 
+4.1
+继承 抽象类 接口的区别
+67addbinary 和 addnumbers, addintegers, merge two sorted array/list 类似 使用sum每次初始化为carry, sum完后 result加入sum%2 carry = sum/2, 最后要加入可能的进位, 然后reverse 
+66 plus one 有一个tricky逻辑 如果数小于9 就+1 提前返回, 如果不是就变为0. 若能走完循环就新建array length+1;
+2 add two numbers 类似逻辑 创建dummy,head 然后 循环中新建cur cur+=carry 后判定l1,l2 carry cur.val操作后 链表往后移 最后判定是否加1
+445 add two numbersii 正向链表. 使用stack,建立一个node 每次赋给sum%10 每次建立一个carry node 值为sum/10. 再让carry指向node. 最后判定node是否为0
+注意int a = s.charAt(i) - '0' 等价于 int a = Character.getNumericValue(s.charAt(i));
+
+4.2
 
 
