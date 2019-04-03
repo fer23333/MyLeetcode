@@ -63,3 +63,6 @@ ood第二节课 desing parking lot
 20 valid parentheses 使用stack else if(stack.isEmpty() || stack.pop() != c) return false; 如果栈为空 说明没有先放入左括号. 如果不相等 说明可能中间有别的括号. 最后判定栈空了没有
 EG: ([)] false, {[]()} true } false
 
+4.3
+linkedlist 专题 要练一下 removen,linkedlistcycle, mergek
+
