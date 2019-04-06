@@ -1,4 +1,6 @@
-    public ListNode removeNthFromEnd(ListNode head, int n) {
+一定要有dummy node 要注意 [1,2] n=2 和 [1] n=1 的特殊情况 
+
+public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         
         ListNode fast = dummy;
