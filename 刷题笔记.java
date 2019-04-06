@@ -64,5 +64,10 @@ ood第二节课 desing parking lot
 EG: ([)] false, {[]()} true } false
 
 4.3
-linkedlist 专题 要练一下 removen,linkedlistcycle, mergek
+linkedlist  19removen 一定要有dummy node 要注意 [1,2] n=2 和 [1] n=1 的特殊情况
+,linkedlistcycle, mergek
 
+4.4
+bq
+4.5
+BQ
