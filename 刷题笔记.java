@@ -65,9 +65,15 @@ EG: ([)] false, {[]()} true } false
 
 4.3
 linkedlist  19removen 一定要有dummy node 要注意 [1,2] n=2 和 [1] n=1 的特殊情况
-,linkedlistcycle, mergek
-
+linkedlistcycle, mergek
+382 LinkedList random node 先量出长度 再随便取几步. 如果长度很长 使用Reservoir Sampling 水塘采样, 确保每次抽数是在这些数范围内其中一个 即为随机抽样了 
+for(int i=1;c.next != null;i++){c = c.next;   if(random.nextInt(i + 1) == i) r = c.val; } return r;
+也可以为(random.nextInt(i + 1) == 1)
+528 Random pick with weight [1 2 3 4] presum变为[1 3 6 10]就可变为概率 注意二分left<right if nums[mid]<ndex, left=mid+1 exclusive刚才的点,最后return left/right 都对
 4.4
 bq
 4.5
 BQ
+3 Longest Substring Without Repeating Characters 注意left指针要为 map.get(right)+1 和left的最大值 不然abba-> 第二个a时left就变小了
+
+
