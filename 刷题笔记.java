@@ -75,5 +75,6 @@ bq
 4.5
 BQ
 3 Longest Substring Without Repeating Characters 注意left指针要为 map.get(right)+1 和left的最大值 不然abba-> 第二个a时left就变小了
-
+4.6
+211 Add and Search Word - Data structure design 使用TrieTree 注意 search包含"." 使用backtracking
 
