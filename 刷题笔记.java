@@ -9,7 +9,7 @@ stringbuilder 和string 在recursion中的区别  https://github.com/fer23333/My
   
 3/23
 703 kth largest in data stream  using min heap
-114 flatten binary tree to linkedlist
+114 flatten binary tree to linkedlist 
 116 Populating Next Right Pointers in Each Node  完全二叉树
 117.Populating Next Right Pointers in Each Node II 并非完整二叉树 可以套用 去run116  在每一次层新建dummy node 并连接 
 307 Range sum query- mutable segement tree 在intial 过程建立tree 并完成 update 和sum  左子树为偶数 右子树为奇数 并保持 ij 为一左一右
@@ -77,4 +77,15 @@ BQ
 3 Longest Substring Without Repeating Characters 注意left指针要为 map.get(right)+1 和left的最大值 不然abba-> 第二个a时left就变小了
 4.6
 211 Add and Search Word - Data structure design 使用TrieTree 注意 search包含"." 使用backtracking
+208 trietree
+ood 
+4.7
+212 word search II 使用 trie tree
+986. Interval List Intersections sol1:没有交集的情况 A.start > B.end a++, B.end > A.start, b++. else 有交集 result.add 然后如果 A.end <B.end, a++
+sol2> 直接考虑有交集 是在 low = max(a.start, b.start) high = min(a.end, b.end)的情况, 然后考虑a.end < b.end 所以不用考虑没交集情况 
+merge interval
+314 Binary Tree vertical order 本质就是bfs,一个queue存node, 一个queue存 col, 一个map存col->list of node, 记录一下min max值 再顺着加入result
+
+
+
 
