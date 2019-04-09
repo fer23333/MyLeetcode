@@ -83,8 +83,15 @@ ood
 212 word search II 使用 trie tree
 986. Interval List Intersections sol1:没有交集的情况 A.start > B.end a++, B.end > A.start, b++. else 有交集 result.add 然后如果 A.end <B.end, a++
 sol2> 直接考虑有交集 是在 low = max(a.start, b.start) high = min(a.end, b.end)的情况, 然后考虑a.end < b.end 所以不用考虑没交集情况 
-merge interval
+56merge interval 设定result.add(intervals.get(0)); 每次取出result最后一位作为cur 比较cur.end >= interval.start, 取大的end 作为新的cur.end
+meeting room
+meeting room ii sort start, PQ end  如果堆不为空，且首元素小于等于当前区间的起始时间，我们去掉堆中的首元素，
+把当前区间的结束时间压入堆，由于最小堆是小的在前面，那么假如首元素小于等于起始时间，说明上一个会议已经结束，可以用该会议室开始下一个会议了
+解法二: sort start数组和end 数组 如果当前起始时间小于结束时间指针的时间，则结果自增1，反之结束时间指针自增1，这样我们可以找出重叠的时间段
 314 Binary Tree vertical order 本质就是bfs,一个queue存node, 一个queue存 col, 一个map存col->list of node, 记录一下min max值 再顺着加入result
+4.8
+面完indeed 学完ood最后两节课 
+merge k sorted list 先把全部头节点加入最小堆. 然后定义dummy node  dummy.next = queue.poll(), dummy = dummy.next 这样会指到list上的node, 然后如果dummy.next不会空 再加入堆
 
 
 
