@@ -92,7 +92,7 @@ meeting room ii sort start, PQ end  如果堆不为空，且首元素小于等�
 4.8
 面完indeed 学完ood最后两节课 
 merge k sorted list 先把全部头节点加入最小堆. 然后定义dummy node  dummy.next = queue.poll(), dummy = dummy.next 这样会指到list上的node, 然后如果dummy.next不会空 再加入堆
-
+spiral matrix 设定top down left right 设置边界条件 然后走一圈
 
 
 
