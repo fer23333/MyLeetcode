@@ -94,5 +94,6 @@ meeting room ii sort start, PQ end  如果堆不为空，且首元素小于等�
 merge k sorted list 先把全部头节点加入最小堆. 然后定义dummy node  dummy.next = queue.poll(), dummy = dummy.next 这样会指到list上的node, 然后如果dummy.next不会空 再加入堆
 spiral matrix 设定top down left right 设置边界条件 然后走一圈
 
-
+4.17
+basic calculator 使用栈存括号里的内容 使用sign和number记录当前的数. 遇到括号时把当前的sign和res先存进栈, 结束括号时再pop出来. 注意最后要看number还有没有
 
