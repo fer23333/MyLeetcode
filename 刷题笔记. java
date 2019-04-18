@@ -96,4 +96,5 @@ spiral matrix 设定top down left right 设置边界条件 然后走一圈
 
 4.17
 basic calculator 使用栈存括号里的内容 使用sign和number记录当前的数. 遇到括号时把当前的sign和res先存进栈, 结束括号时再pop出来. 注意最后要看number还有没有
-
+104. Maximum Depth of Binary Tree, divide and conquer 比较左边子树和右边 depth最大值 然后加一
+543. Diameter of Binary Tree, 
