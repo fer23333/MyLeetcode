@@ -33,13 +33,18 @@ public TreeNode constructMaximumBinaryTree(int[] nums) {
 //Then we push current number into the stack.
 
 
-A is the biggest among nums[0] ~ nums[i - 1].
-B is the biggest for the numbers between A and nums[i] (exclusive).
-C is the biggest for the numbers between B and nums[i] (exclusive).
-Let's use a stack, and assume that the content of the stack contains the "right path" of nodes before the node for the current number.
-For the node of the new number, we should remove the nodes in the stack which are smaller than the current number.
-So we pop the stack until the top element of the stack is greater than the current number.
-Then, add the node for the current number to the stack.
+// A is the biggest among nums[0] ~ nums[i - 1].
+// B is the biggest for the numbers between A and nums[i] (exclusive).
+// C is the biggest for the numbers between B and nums[i] (exclusive).
+// Let's use a stack, and assume that the content of the stack contains the "right path" of nodes before the node for the current number.
+// For the node of the new number, we should remove the nodes in the stack which are smaller than the current number.
+// So we pop the stack until the top element of the stack is greater than the current number.
+// Then, add the node for the current number to the stack.
+
+// 使用到了一个辅助数组v来让保持降序。我们遍历数组，对于每个遍历到的数字，创建一个结点，然后进行循环，
+// 如果数组v不空，且末尾结点值小于当前数字，那么将末尾结点连到当前结点的左子结点，并且移除数组中的末尾结点，
+// 这样可以保证子结点都会小于父结点。循环结束后，如果此时数组v仍不为空，说明结点值很大，那么将当前结点连到数组末尾结点的右子结点上。
+// 之后别忘了将当前结点加入数组v中，最后返回数组v的首结点即可
 
 public TreeNode constructMaximumBinaryTree(int[] nums) {
         Deque<TreeNode> stack = new LinkedList<>();
