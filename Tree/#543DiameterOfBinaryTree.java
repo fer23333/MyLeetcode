@@ -3,7 +3,7 @@
 //is greater than the previous max sum. The return statement only keep track of the height of a node. 
 //For every node, length of longest path which pass it = MaxDepth of its left subtree + MaxDepth of its right subtree.
 
-    int max;
+    private int max;
     public int diameterOfBinaryTree(TreeNode root) {
         max = 0;
         maxDepth(root);
