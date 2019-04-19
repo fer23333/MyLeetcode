@@ -45,7 +45,7 @@ public boolean isBalanced(TreeNode root) {
         return Math.max(lh,rh) + 1;
     }
     
-//
+//simple O(n) version: (height of tree starts from 0, so -1 is free to use as a flag)
 public boolean isBalanced(TreeNode root){
 		if(root == null){
 			return true;
