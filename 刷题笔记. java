@@ -107,3 +107,6 @@ basic calculator 使用栈存括号里的内容 使用sign和number记录当前�
 187. Repeated DNA Sequences 两个hashset加 滑动窗
 609. Find Duplicate File in System map和string操作 使用indexof切分括号, split("\\s+")切分空格 关键有一些文件系统以及寻找文件很大的follow-up
 739. Daily Temperatures 使用一个单调递减栈, 栈内存的是index,从后往前遍历
+
+4.21
+36. Valid Sudoku 
