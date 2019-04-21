@@ -109,4 +109,6 @@ basic calculator 使用栈存括号里的内容 使用sign和number记录当前�
 739. Daily Temperatures 使用一个单调递减栈, 栈内存的是index,从后往前遍历
 
 4.21
-36. Valid Sudoku 
+36. Valid Sudoku 使用set记录之前出现过的数字. 将他们encode为 数字+ "in row/col/cube" + position 的方式 并 用boolean set.add() 判定是否加过了
+
+
