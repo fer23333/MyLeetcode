@@ -97,4 +97,8 @@ spiral matrix 设定top down left right 设置边界条件 然后走一圈
 4.17
 basic calculator 使用栈存括号里的内容 使用sign和number记录当前的数. 遇到括号时把当前的sign和res先存进栈, 结束括号时再pop出来. 注意最后要看number还有没有
 104. Maximum Depth of Binary Tree, divide and conquer 比较左边子树和右边 depth最大值 然后加一
-543. Diameter of Binary Tree, 
+543. Diameter of Binary Tree, 利用lc104的思想 计算每个node左右最大的depth 然后取和, 设置全局变量取max
+559. Maximum Depth of N-ary Tree 对children采用递归 和104类似
+111. Minimum Depth of Binary Tree, bfs 可以秒. 递归和104类似 但是考虑一边为0时,dpeth为另一边+1
+110.Balanced Binary Tree 和104类似 求maxdepth, 使用flag记录是否不平衡; 或者记录返回值为-1, 并放到条件中判定是否有过-1 这样最终返回会为-1
+654. Maximum Binary Tree 每次找最大值 然后分到两边 典型的建立树型 divide& conquer. 利用helper函数传递数组的范围. 或者使用单调栈.
