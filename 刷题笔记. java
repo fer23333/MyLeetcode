@@ -102,3 +102,8 @@ basic calculator 使用栈存括号里的内容 使用sign和number记录当前�
 111. Minimum Depth of Binary Tree, bfs 可以秒. 递归和104类似 但是考虑一边为0时,dpeth为另一边+1
 110.Balanced Binary Tree 和104类似 求maxdepth, 使用flag记录是否不平衡; 或者记录返回值为-1, 并放到条件中判定是否有过-1 这样最终返回会为-1
 654. Maximum Binary Tree 每次找最大值 然后分到两边 典型的建立树型 divide& conquer. 利用helper函数传递数组的范围. 或者使用单调栈.
+
+4.20
+187. Repeated DNA Sequences 两个hashset加 滑动窗
+609. Find Duplicate File in System map和string操作 使用indexof切分括号, split("\\s+")切分空格 关键有一些文件系统以及寻找文件很大的follow-up
+
