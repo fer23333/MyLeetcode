@@ -1,0 +1,22 @@
+public Node cloneGraph(Node node) {
+        if(node == null){
+            return null;
+        }
+        Queue<Node> q = new LinkedList<>();
+        Map<Node, Node> map = new HashMap<>();
+        Node newHead = new Node(node.val, new LinkedList<>());
+        map.put(node, newHead);
+        q.offer(node);
+        
+        while(!q.isEmpty()){
+            Node cur = q.poll();
+            for(Node neighbor : cur.neighbors){
+                if(!map.containsKey(neighbor)){
+                    map.put(neighbor, new Node(neighbor.val, new LinkedList<>()));
+                    q.offer(neighbor);
+                }
+                map.get(cur).neighbors.add(map.get(neighbor));
+            }
+        }
+        return newHead;
+    }
