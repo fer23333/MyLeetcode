@@ -112,6 +112,7 @@ basic calculator 使用栈存括号里的内容 使用sign和number记录当前�
 36. Valid Sudoku 使用set记录之前出现过的数字. 将他们encode为 数字+ "in row/col/cube" + position 的方式 并 用boolean set.add() 判定是否加过了
 Sparse Matrix Multiplication sol1.跳过A为0部分 不再计算 sol2.(optimized) 二维list存下B不为0的index位置 遍历A不为0的点 只计算B不为零的index
 
-4.26
+4.27
+133clone graph node class改了 需要初始化node 新建一个arraylist, 先新建root和他的copy到hashmap, bfs node 然后新建他的neighbor copy到map 之后再加入node copy的neighbors中
 
 
