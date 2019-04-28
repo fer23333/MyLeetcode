@@ -9,7 +9,8 @@ Union(x,y) : merge two clusters
 check whether two elements are in the smae set or not in O(1)*
 
 Without optimizatino: find O(n)
-two key optimizations:
+
+Qtwo key optimizations:
 1. path compression : make tree flat
 2. union by rank: merge low rank tree to high rank pne
 
