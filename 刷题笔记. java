@@ -119,4 +119,6 @@ Sparse Matrix Multiplication sol1.跳过A为0部分 不再计算 sol2.(optimized
 
 4.28 
 257. Binary Tree Paths 可以用string或者stringbuilder 用traverse的方法 sb要注意delete.
+best time to buy and sell stock 全局max取0 因为如果不盈利 是不会买的. 然后比较每次curmax+ 股票差值 和 股票差值 是否有提升
+maximum subarray 全局max取Integer_MIN_VALUE 因为 可能存在负数. 每次比较 curMax + num[i]和num[i]是否有提升
 
