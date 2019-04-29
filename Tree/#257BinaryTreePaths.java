@@ -1,4 +1,6 @@
 //从头往下 preorder
+// String is immutable, everytime you pass a string, it is a new object. 
+//  Not the case for StringBuilder, it keeps changing everytime you operator on it.
  
 public List<String> binaryTreePaths(TreeNode root) {
         if(root == null) return new ArrayList<>();
