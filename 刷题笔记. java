@@ -115,10 +115,11 @@ Sparse Matrix Multiplication sol1.跳过A为0部分 不再计算 sol2.(optimized
 4.27
 133clone graph node class改了 需要初始化node 新建一个arraylist, 先新建root和他的copy到hashmap, bfs node 然后新建他的neighbor copy到map 之后再加入node copy的neighbors中
 658. Find K Closest Elements 找到左区间 然后往右k个 在0-m- m+k-n-k 的区间内取值 如果x - arr[mid] > arr[mid+k] - x 就使 left = mid+1
-72. Edit Distance
+72. Edit Distance dfs with memo or dp
 
 4.28 
 257. Binary Tree Paths 可以用string或者stringbuilder 用traverse的方法 sb要注意delete.
 best time to buy and sell stock 全局max取0 因为如果不盈利 是不会买的. 然后比较每次curmax+ 股票差值 和 股票差值 是否有提升
 maximum subarray 全局max取Integer_MIN_VALUE 因为 可能存在负数. 每次比较 curMax + num[i]和num[i]是否有提升
+472.Concatenated Words 可以使用trietree或者 dfs with memo(hashset) O(n*k^2)  使用dp为 O(n*k^3) 和word break类似
 
