@@ -61,3 +61,70 @@
         }
         return open == close;
     }
+
+//dfs
+
+private static final char[] PAR = new char[]{'(', ')'};
+private static final char[] REV_PAR = new char[]{ ')', '('};
+private void remove(String s, List<String>ans, int last_i, int last_j, char[] par){
+    int stack = 0, i = last_i, j = last_j;
+    for(; i < s.length(); ++i){
+        if(s.charAt(i) == par[0]) stack++;
+        if(s.charAt(i) == par[1]) stack--;
+        if(stack >= 0) continue;
+        for(; j <= i; ++j){
+            if(s.charAt(j) != par[1]) continue;
+            if(j == last_j || s.charAt(j - 1) != par[1]) remove(s.substring(0, j) + s.substring(j + 1), ans, i, j, par);
+        }
+        return;
+    }
+    String reversed = new StringBuilder(s).reverse().toString();
+    if(par[0] == PAR[0]) remove(reversed, ans, 0, 0, REV_PAR);
+    else ans.add(reversed);
+}
+
+public List<String> removeInvalidParentheses(String s) {
+    List<String> ans = new ArrayList<>();
+    remove(s, ans, 0, 0, PAR);
+    return ans;
+}
+//只要找到一种符合的情况
+//一遍scan找到符合情况 需要删除的左右括号 放到两个stack中
+
+public String remove(String s){
+    Deque<Integer> left = new ArrayDeque<>();
+    Deque<Integer> right = new ArrayDeque<>();
+
+    for(int i =0; i< s.length(); i++){
+        char c = s.charAt(i);
+        if(c == '('){
+            left.append(i)
+        }else if(c == ')'){
+            if(!stack.isEmpty()){
+                left.pop();
+            }else{
+                right.push(i);
+            }
+        }
+    }
+    Set<Integer> filter = new HashSet<>();
+    while(!left.isEmpty() || !right.isEmpty()){
+        if(!left.isEmpty()){
+            filter.add(left.pop());
+        }
+        if(!right.isEmpty()){
+            filter.add(right.pop());
+        }
+    }
+    StringBuilder sb = new StringBuilder();
+    for(int i=0; i< s.length(); i++){
+        if(!filter.contains(i)){
+            sb.append(s.charAt(i) + "");
+        }
+    }
+    
+    return sb.toString();  
+}
+ 
+
+}
