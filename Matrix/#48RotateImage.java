@@ -21,7 +21,7 @@ public void rotate(int[][] matrix) {
                 matrix[m-1-i][j] = temp;
             }
         }
-        //逆对角线交换
+        //正对角线交换(左上到右下)
         for(int i=0; i< m; i++){
             for(int j= i; j< n; j++){
                 int temp = matrix[i][j];
@@ -38,7 +38,8 @@ public void rotate(int[][] matrix) {
  * 4 5 6  => 6 5 4  => 2 5 8
  * 7 8 9     9 8 7     1 4 7
 */
-左右
+
+//左右交换 然后正对角线交换(左上 右下)
 void anti_rotate(vector<vector<int> > &matrix) {
     for (auto vi : matrix) reverse(vi.begin(), vi.end());
     for (int i = 0; i < matrix.size(); ++i) {
