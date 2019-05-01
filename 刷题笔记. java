@@ -138,6 +138,7 @@ maximum subarray 全局max取Integer_MIN_VALUE 因为 可能存在负数. 每次
 301 remove invalid parentheses 如果用dfs找到所有case 2^n. 
 如果只需要找到一种答案 O(n) 设立两个stack 存需要删除的左右括号
 56merge interval 创建一个result 每次看他的末端和 current 的start 比较, 如果无交集 就append, 如果有就更新末端区间的 较大的尾端
-
+meeting roomi 和merge interval基本一致 设立一个cur interval 一边走一边 merge 看有没有交集
+meeting room ii sort start 之后,建立一个最小堆 对end排序, 如果pq.peek().end< cur.start 说明这间会议室已经用完 就poll 然后加入新的 最后返回pq的size
 
 
