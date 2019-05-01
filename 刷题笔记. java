@@ -134,7 +134,8 @@ maximum subarray 全局max取Integer_MIN_VALUE 因为 可能存在负数. 每次
 
 5.1
 20 valid parentheses valid:(){} ({}) invalid: ({)},  }{ 此时栈为空 (} 此时栈顶内容不相等
-如果只用判定括号有效 可以用open close两个counter 记录, 如果open<close 九尾
-301 remove invalid parentheses
-257. Binary Tree Paths 可以用string或者stringbuilder 用traverse的方法 sb要注意delete
-257. Binary Tree Paths 可以用string或者stringbuilder 用traverse的方法 sb要注意delete.
+如果只用判定括号有效 可以用open close两个counter 记录, 如果open<close 就为false
+301 remove invalid parentheses 如果用dfs找到所有case 2^n. 
+如果只需要找到一种答案 O(n) 设立两个stack 存需要删除的左右括号
+
+
