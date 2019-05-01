@@ -115,7 +115,8 @@ Sparse Matrix Multiplication sol1.跳过A为0部分 不再计算 sol2.(optimized
 4.27
 133clone graph node class改了 需要初始化node 新建一个arraylist, 先新建root和他的copy到hashmap, bfs node 然后新建他的neighbor copy到map 之后再加入node copy的neighbors中
 658. Find K Closest Elements 找到左区间 然后往右k个 在0-m- m+k-n-k 的区间内取值 如果x - arr[mid] > arr[mid+k] - x 就使 left = mid+1
-72. Edit Distance dfs with memo or dp
+72. Edit Distance dfs with memo or dp: 表示前i个变为前j个的步数, cost[i][0]=i, cost[0][j]初始化. 
+两种情况1.cost[i + 1][j + 1] = cost[i][j];2. cost[i+1][j+1] = Math.min(cost[i][j+1], Math.min(cost[i+1][j], cost[i][j])) + 1;
 
 4.28 
 257. Binary Tree Paths 可以用string或者stringbuilder 用traverse的方法 sb要注意delete.
@@ -129,3 +130,11 @@ maximum subarray 全局max取Integer_MIN_VALUE 因为 可能存在负数. 每次
 4.30
 160. Intersection of Two Linked Lists  a走到尾和b走到尾后 a到headB, b到headA 直到node相等 即相遇点 a+c+b == b+c+a
 48. Rotate Image 顺时针:上下交换, 正对角交换. 逆时针: 左右交换, 正对角交换
+50. Pow(x, n)
+
+5.1
+20 valid parentheses valid:(){} ({}) invalid: ({)},  }{ 此时栈为空 (} 此时栈顶内容不相等
+如果只用判定括号有效 可以用open close两个counter 记录, 如果open<close 九尾
+301 remove invalid parentheses
+257. Binary Tree Paths 可以用string或者stringbuilder 用traverse的方法 sb要注意delete
+257. Binary Tree Paths 可以用string或者stringbuilder 用traverse的方法 sb要注意delete.
