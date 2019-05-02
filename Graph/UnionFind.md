@@ -16,7 +16,7 @@ Qtwo key optimizations:
 1. path compression : make tree flat
 2. union by rank: merge low rank tree to high rank pne
 
-
+```
 class UnionFindSet {
   private int[] parents_;
   private int[] ranks_;
@@ -55,4 +55,4 @@ class UnionFindSet {
       return u;
   }
 }
-
+```
