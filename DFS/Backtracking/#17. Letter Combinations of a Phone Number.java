@@ -13,11 +13,13 @@ public List<String> letterCombinations(String digits) {
     public void dfs(List<String> res, String digits, String[] dic, StringBuilder sb, int length){
         if(length == digits.length()){
             res.add(sb.toString());
-        }else{
-            for(char c : dic[digits.charAt(length) - '0'].toCharArray()){
-                sb.append(String.valueOf(c));
-                dfs(res, digits, dic, sb, length+1);
-                sb.deleteCharAt(sb.length() -1);
-            }
+            return;
         }
+        int index = digits.charAt(length) - '0';
+        for(char c : dic[index].toCharArray()){
+            sb.append(String.valueOf(c));
+            dfs(res, digits, dic, sb, length+1);
+            sb.deleteCharAt(sb.length() -1);
+        }
+        
     }
