@@ -142,3 +142,12 @@ meeting roomi 和merge interval基本一致 设立一个cur interval 一边走�
 meeting room ii sort start 之后,建立一个最小堆 对end排序, 如果pq.peek().end< cur.start 说明这间会议室已经用完 就poll 然后加入新的 最后返回pq的size
 add binary 从后往前加, 每次sum设为carry, 如果string没走完就让sum加上他的值, res.append(sum%2),carry = sum/2, 最后退出循环还要看一下carry的值, 最后翻转答案
 
+5.2
+599. Minimum Index Sum of Two Lists 两个指令 result.toArray( new String[result.size()]) 和 list.clear() O(n)时间
+73. Set Matrix Zeroes 讲第一行和第一列作为记录 第i行第j列有0时的参考. 如果已经在第一行或者第一列有0 就先记录下来 后面再把整行变为0.
+61. Rotate List 先计算链表长度, 最后找到所在位置 在断开链表.
+
+5.3
+yelp OA
+
+
