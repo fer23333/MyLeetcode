@@ -123,14 +123,14 @@ Sparse Matrix Multiplication sol1.跳过A为0部分 不再计算 sol2.(optimized
 best time to buy and sell stock 全局max取0 因为如果不盈利 是不会买的. 然后比较每次curmax+ 股票差值 和 股票差值 是否有提升
 maximum subarray 全局max取Integer_MIN_VALUE 因为 可能存在负数. 每次比较 curMax + num[i]和num[i]是否有提升
 472.Concatenated Words 可以使用trietree或者 dfs with memo(hashset) O(n*k^2)  使用dp为 O(n*k^3) 和word break类似
-77. Combinations 
+77. Combinations backtracking 时间复杂度(n!)/(n-k!), 
 155. Min Stack 每次如果min 更新 将之前最小值和当前最小值入栈 并更新min, pop时 如果为最小值 pop两次, 并更新min值 也可以使用两个栈
 // -2, 0, -3, -5 -> Integer.MAX_VALUE, -2,0,-2,-3, -3,-5
 
 4.30
 160. Intersection of Two Linked Lists  a走到尾和b走到尾后 a到headB, b到headA 直到node相等 即相遇点 a+c+b == b+c+a
 48. Rotate Image 顺时针:上下交换, 正对角交换. 逆时针: 左右交换, 正对角交换
-50. Pow(x, n)
+50. Pow(x, n) divide and conquer 分 奇数偶数和负数
 
 5.1
 20 valid parentheses valid:(){} ({}) invalid: ({)},  }{ 此时栈为空 (} 此时栈顶内容不相等
@@ -149,5 +149,8 @@ add binary 从后往前加, 每次sum设为carry, 如果string没走完就让sum
 
 5.3
 yelp OA
+
+5.4
+127 largest number考察string排序的一种方法,然后要去掉所有开头为零即(0,0,0)
 
 
