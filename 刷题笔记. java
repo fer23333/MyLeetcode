@@ -147,10 +147,12 @@ add binary 从后往前加, 每次sum设为carry, 如果string没走完就让sum
 73. Set Matrix Zeroes 讲第一行和第一列作为记录 第i行第j列有0时的参考. 如果已经在第一行或者第一列有0 就先记录下来 后面再把整行变为0.
 61. Rotate List 先计算链表长度, 最后找到所在位置 在断开链表.
 
-5.3
-yelp OA
-
 5.4
 127 largest number考察string排序的一种方法,然后要去掉所有开头为零即(0,0,0)
+permutaion 不需要startindex, 因为每次还是需要取到前面的元素, 可以使用一个set, 和temp元素相同, 专门用来去重
+subsets 需要 startIndex, result 从null开始加, 每次都加入new(temp)
+combination 需要startindex, 只有满足条件才加入new(temp)
+Letter Combinations of a Phone Number 传入length(类似startindex), length==digits.length加入result, 同时控制digit.charAt(length), 再遍历该digits的所有对应字符
 
+5.5
 
