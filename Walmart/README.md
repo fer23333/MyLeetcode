@@ -31,10 +31,10 @@ Time is always valid and are in the same day. We can assume Input is from 6 a.m.
 	 3 < Waiting Time            : Detractors
 7. When only one order comes, deliver it regardless its distance, since you never know when is the next order.
 8. If and Only if one order exists, even the delivery time > 3 hours(Must be detractors). 
-   the scheduler has to deliver this item.
+   the scheduler has to deliver this item because you don't know when will your next order come.
    But if delivery time > 3 hours and it's not the only item, put this item the last to deliver.
-9. Drone delivers one item at a time and have to go back to warehouse to pick up the next item.
-10. when dealing with multiple orders. 
+9. Drone delivers one item at a time and have to go back to warehouse to pick up the next item. That also means you have to calculate double delivery time(time to return to warehouse).
+10. when dealing with multiple orders . 
 	
 ```
 
@@ -74,11 +74,11 @@ http://www.optimization-online.org/DB_FILE/2017/09/6206.pdf
    is to calculate the possibilities of wait or not wait situation, and choose whether use wait or not.
    
    
-   compare different kinds of ways of delivering: closet first, farthest first, smart wait(need to test parameters).
+   compare different kinds of ways of delivering: closet first, farthest first, smart wait(need to test parameters like waiting time, exist order optimal way).
    
    add machie learning algorithm to find the optimal way(with enough dataset, more concise model and better result)
    
-    multiple warehouse, multiple drones, carry multiple items.
+   multiple warehouse, multiple drones, carry multiple items.
 
 
 ```
