@@ -34,7 +34,9 @@ Time is always valid and are in the same day. We can assume Input is from 6 a.m.
    the scheduler has to deliver this item because you don't know when will your next order come.
    But if delivery time > 3 hours and it's not the only item, put this item the last to deliver.
 9. Drone delivers one item at a time and have to go back to warehouse to pick up the next item. That also means you have to calculate double delivery time(time to return to warehouse).
-10. when dealing with multiple orders . 
+10. when dealing with multiple orders, just deliver the closet orders. Because you can serve more customers you will get higher NPS socre.
+There could be corner case people all live far away(but Actually you will not build warehouse here).
+And worst case you always miss other's orders, you have to find the optimal way by processing enough data.
 	
 ```
 
@@ -73,7 +75,7 @@ http://www.optimization-online.org/DB_FILE/2017/09/6206.pdf
    since long task wait for t/2, the shorter task now becomes detractors. The solution to this problem
    is to calculate the possibilities of wait or not wait situation, and choose whether use wait or not.
    
-   
+   Do a survey about how many customers living nearby and how many customers live far away. Make a HeatMap trying to figure out a optimal way.
    compare different kinds of ways of delivering: closet first, farthest first, smart wait(need to test parameters like waiting time, exist order optimal way).
    
    add machie learning algorithm to find the optimal way(with enough dataset, more concise model and better result)
