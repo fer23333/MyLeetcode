@@ -15,30 +15,38 @@ Date: 05/16/2019
 
 ## Assumption
 
-
+```
 1. OrderDirection format strictly follows: N/S X + E/W Y. OrderID format strictly follows: WMXXXX (4 digits). 
 Order TimeStamp format strictly follows: HH:MM:SS and will not exceed 24(24-hour Time Format) . All input formats are valid.
+
 2. Assume drone only goes straight and we calculate distance X+Y instead of sqrt(X^2 + Y^2). Because it's city roads, we cannot go directly to destination.
+
 3. OrderTime always within a day, we do not consider overtime order or can't finish before 10PM.
 Time is always valid and are in the same day. We can assume Input is from 6 a.m. until 10 p.m. And the drone is able to finish the work same day(clear the order in warehouse).
 
 3.(alternative way) drone only works from 6:00 - 22:00. start to work at 6 and if the task can't be finished by 22:00, give up that delivery.
+
 4. Orders come as a data stream, you never know if you have next order or when will you have next order.
+
 5. OrderDistance is always within the range of the Drone(within warehouse delivery range).
+
 6. NPS Calculation:
 	 0 <= Waiting Time <= 1 hour : Promoters
 	 1 < Waiting Time <= 3 hours : Neutral
 	 3 < Waiting Time            : Detractors
+
 7. When only one order comes, deliver it regardless its distance, since you never know when is the next order.
+
 8. If and Only if one order exists, even the delivery time > 3 hours(Must be detractors). 
    the scheduler has to deliver this item because you don't know when will your next order come.
    But if delivery time > 3 hours and it's not the only item, put this item the last to deliver.
+
 9. Drone delivers one item at a time and have to go back to warehouse to pick up the next item. That also means you have to calculate double delivery time(time to return to warehouse).
+
 10. when dealing with multiple orders, just deliver the closet orders. Because ,literally, warehouse will be built where lots of people live nearby and also we can serve more people(to get high promoters rate) in this way. Eventually, we can get higher NPS socre.
 There could be corner case people all live far away(but Actually you will not build warehouse here).
 And worst case you always miss other's orders, we have to find the optimal way by processing enough data.
-	
-
+```
 
 ## Instruction
 
