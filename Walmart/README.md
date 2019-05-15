@@ -15,7 +15,7 @@ Date: 05/16/2019
 
 ## Assumption
 
-```
+
 1. OrderDirection format strictly follows: N/S X + E/W Y. OrderID format strictly follows: WMXXXX (4 digits). 
 Order TimeStamp format strictly follows: HH:MM:SS and will not exceed 24(24-hour Time Format) . All input formats are valid.
 2. Assume drone only goes straight and we calculate distance X+Y instead of sqrt(X^2 + Y^2). Because it's city roads, we cannot go directly to destination.
@@ -38,7 +38,7 @@ Time is always valid and are in the same day. We can assume Input is from 6 a.m.
 There could be corner case people all live far away(but Actually you will not build warehouse here).
 And worst case you always miss other's orders, we have to find the optimal way by processing enough data.
 	
-```
+
 
 ## Instruction
 
