@@ -13,7 +13,7 @@ Thanks for your time!
 Date: 05/16/2019
 ```
 
-## Assumption
+## Assumption:
 
 ```
 1. OrderDirection format strictly follows: N/S X + E/W Y. OrderID format strictly follows: WMXXXX (4 digits). 
@@ -48,9 +48,69 @@ There could be corner case people all live far away(but Actually you will not bu
 And worst case you always miss other's orders, we have to find the optimal way by processing enough data.
 ```
 
-## Instruction
+## Instruction:
+
+### usage:
+```
+    java -jar DroneDelivery.jar -input input_file_path [-output output_file_path] [-scheduler scheduler_type] [-print Y/N]
+Usage(.class File): 
+    java iogithubowenying.test.Test -input input_file_path [-output output_file_path] [-scheduler scheduler_type] [-print Y/N]
+	
+Options: 
+    -output    : Output file path, default as "./result.txt"   
+    -scheduler : dynamic , (Shortest order first, first come first serve)(also as default)
+                 unfair  , (Detractors Tasks always be delivered at the very last)
+                 limited , (only deliver from 6am - 10pm + dynamic mode)
+                 unfair_limited , (unfair mode + limited mode)
+    -print     : print result in terminal or not. "Y" print; "N" not print, default as "N"
+```
+
+### Compile:
+
+```
+1. As Intellij Project:
+		|-- Import Project into Eclipse
+		|-- Compile
+		|-- Right click the project --> Run as --> Run Configurations --> Set main class as iogithubowenying.test.Test
+		|-- Export the project as Runnable Jar File
+			|-- Right click on the project
+			|-- Click export as Runnable Jar File
+		|-- Run
+			|-- Follows the Usage of Jar File
+		
+	2. Using command line
+		|-- Enter root directory of the project
+			|-- src : source files
+			|-- bin : binary executables
+			|-- test: some test files
+		|-- find ./src -name "*.java" > source.txt
+			|-- find all the java file under src and export into source.txt
+		|-- javac -d bin @source.txt
+			|-- Compile all the java files listed in source.txt
+			|-- Output the binary files into bin folder
+		|-- Enter bin file
+		|-- Run
+			|-- Follows the Usage of .class File
 
 
+```
+
+
+
+## Core Algorithm:
+
+    When only 1 order comes, deliver; When more than 1 order is waiting, do the shortest
+     |--The reason when only one order comes then deliver, is that you never know when will the next 
+       order come. So you need to deliver it. 
+     |--When many tasks come at the same time, or many tasks come in the middle of delivering 
+       an order, always deliver the shortest. The reason is if you want to make more people
+       wait less time, you need to deliver short distance order, which can make others wait
+       for the shortest time; 
+       
+## Implementation:
+
+
+## Project Hierarchical Structure:
 
 ## Future Usage
 
