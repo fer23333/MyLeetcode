@@ -19,7 +19,7 @@ Date: 05/16/2019
 1. OrderDirection format strictly follows: N/S X + E/W Y. OrderID format strictly follows: WMXXXX (4 digits). 
 Order TimeStamp format strictly follows: HH:MM:SS and will not exceed 24(24-hour Time Format) . All input formats are valid.
 
-2. Assume drone only goes straight and we calculate distance X+Y instead of sqrt(X^2 + Y^2). Because it's city roads, we cannot go directly to destination.
+2. Assume drone only goes straight and we calculate Manhattan distance instead of Euclidean distance.
 
 3. OrderTime always within a day, we do not consider overtime order or can't finish before 10PM.
 Time is always valid and are in the same day. We can assume Input is from 6 a.m. until 10 p.m. And the drone is able to finish the work same day(clear the order in warehouse).
