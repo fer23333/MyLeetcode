@@ -109,8 +109,40 @@ Options:
        
 ## Implementation:
 
+```
+    |-- Use a queue to store the tasks (which actually simulate input task stream)
+    |-- Use a Priority Queue to store waiting tasks, the task with the shorter distance
+        	    comes first.
+    |-- When PriorityQueue is empty(No task at all), poll task queue(One new task comes) and offer to PriorityQueue
+    |-- When PriorityQueue is not empty(Currently there is task waiting to deliver),
+            poll the task from PriorityQueue, deliver
+    |-- When delivering, if there are other tasks comes, poll task queue and offer them to PriorityQueue
+        		(Calculate the finish time of current delivery, poll task queue's task if they come before the 
+             finish time, then offer them to waiting queue, which is PriorityQueue)
+```
 
 ## Project Hierarchical Structure:
+
+```
+	Order(I)           -->      DroneOrder
+	OrderDirection(I)  -->      DroneOrderDirection
+	OrderID(I)         -->      DroneOrderID
+	OrderTime(I)       -->      DroneOrderTime
+	
+	DynamicInputStreamScheduler              -->      DynamicInputWithWaitScheduler
+	DynamicInputStreamLimitedTimeScheduler   -->      DynamicInputStreamLimitedTimeWithWaitScheduler
+	
+	RandomTestGenerator(T)
+	NPSCalculator(T)
+	ReadOrdersFromFile(T)
+	TimeConvert(T)
+	WriteOrdersToFile(T)
+	
+	Test(Main)
+	TestGenerator(JunitTest)
+	
+  I: Interface, T: Tool class
+```
 
 ## Future Usage
 
