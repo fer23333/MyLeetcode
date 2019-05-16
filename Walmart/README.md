@@ -69,9 +69,9 @@ Options:
 
 ```
 1. As Intellij Project:
-		|-- Import Project into Eclipse
+		|-- Import Project into Intellij
 		|-- Compile
-		|-- Right click the project --> Run as --> Run Configurations --> Set main class as iogithubowenying.test.Test
+		|-- Right click the project --> Run as --> Run Configurations --> Set main class as ./test.Test
 		|-- Export the project as Runnable Jar File
 			|-- Right click on the project
 			|-- Click export as Runnable Jar File
@@ -94,8 +94,6 @@ Options:
 
 
 ```
-
-
 
 ## Core Algorithm:
 
