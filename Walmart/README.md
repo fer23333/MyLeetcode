@@ -68,6 +68,8 @@ Options:
 ### Compile:
 
 ```
+
+https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html#get-started
 1. As Intellij Project:
 		|-- Import Project into Intellij
 		|-- Compile
