@@ -144,41 +144,16 @@ Options:
 
 ## Future Usage
 
+```
+1. multihtread/concurrent situation, using sychronized to lock the method to make thread safe
+2. Time outside of 6:00am - 10:00pm,  need to wait till the next day
+3. Order distance too far away  -> corresponds to closet warehouse
+4. multiple warehouse, multiple drones, carry multiple items.(real-life situations)
+5. some certain/special item need to be delivered whitin a given time(flowers, vege, food and etc)
+6. compare different kinds of ways of delivering: closet first, farthest first, smart wait(need to test parameters like waiting time, exist order optimal way).
+7. Do a survey about how many customers living nearby and how many customers live far away. Make a HeatMap trying to figure out a optimal way.
+8. add machie learning model to find the optimal way(with enough dataset, more concise model and better result)
+```
+
+some future algorithm for single drone, single item.
 http://www.optimization-online.org/DB_FILE/2017/09/6206.pdf
-```
-1. Starve situation
-2. Time outside of 6:00am - 10:00pm  need to wait till the next day
-3. Should work under -- Different ID format; Different position format; Different timestamp format
-	eg: If not Manhattan distance ? 
-4. Order which is tooooooo far away (eg: cross state) --> push to corresponding warehouse
-5. If memory is filled up by the input stream ?
-6. How about drone can carry N goods at a time?
-7. Certain goods(eg:food) need to be delivered within a time? (Can't be in waiting queue for too long)
-8. If current task is too far, wait for a certain time.
-9. What if there are multiple Drones doing the delivery job 
-	Multi-threads with synchronizing, lock waiting queue
-10. Scheduler can set a extra waiting time as "et". When far order comes, wait an extra time of "et",
-   if there is no shorter ones coming, then deliver; otherwise, deliver the shorter one.
-   the threshold of et is
-				et = (EarlierLongerTime - LaterShorterTime)/2   (I calculate it with Math)
-   Since LaterShorterTime is unknown when we only have the EarlierLongerTime,
-   we can estimate it as 
-				LaterShorterTime = (1/n) * EarlierLongerTime 
-   So the final et can be estimated as
-				et = ((n - 1)/n) EarlierLongerTime / 2
-   in which, n is set by the programmer, EarlierLongerTime = n * LaterShorterTime
-   But this also has an issue: Suppose we have a EarlierLongerTime = t,  it waited for t/2. After
-   waiting, it is delivered, and as soon as it is delivered, a shorter task comes. If long task
-   didn't wait, it should have come back earlier so that the shorter task won't be detractors. But
-   since long task wait for t/2, the shorter task now becomes detractors. The solution to this problem
-   is to calculate the possibilities of wait or not wait situation, and choose whether use wait or not.
-   
-   Do a survey about how many customers living nearby and how many customers live far away. Make a HeatMap trying to figure out a optimal way.
-   compare different kinds of ways of delivering: closet first, farthest first, smart wait(need to test parameters like waiting time, exist order optimal way).
-   
-   add machie learning algorithm to find the optimal way(with enough dataset, more concise model and better result)
-   
-   multiple warehouse, multiple drones, carry multiple items.
-
-
-```
