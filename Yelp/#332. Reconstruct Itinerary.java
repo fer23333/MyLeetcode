@@ -3,7 +3,7 @@
 
 首先将adjancetlist 用map存， 犹豫题目要求先输出lexo order， 所以用priorityqueue做value
 非递归写法： 用stack存遍历过的path， 当该点存在而且， 还有没访问过的下一个点
-
+Hierholzer’s Algorithm:
 Thus the idea is to keep following unused edges and removing them until we get stuck. 
 Once we get stuck, we back-track to the nearest vertex in our current path that has unused edges, 
 and we repeat the process until all the edges have been used. We can use another container to maintain the final path.
@@ -35,5 +35,27 @@ and we repeat the process until all the edges have been used. We can use another
         }
         return res;
     }
-    
-    
+    //递归写法
+    public List<String> findItinerary(List<List<String>> tickets) {
+           //["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+        if(tickets == null || tickets.size() == 0){
+            return new ArrayList<>();
+        }
+        Map<String, PriorityQueue<String>> map = new HashMap<>();
+        List<String> res= new ArrayList<>();
+        for(List<String> s : tickets){
+            if(!map.containsKey(s.get(0))){
+                PriorityQueue<String> pq = new PriorityQueue<>((a,b) -> a.compareTo(b));
+                map.put(s.get(0), pq);
+            }
+            map.get(s.get(0)).add(s.get(1));
+        }
+        dfs(res, map, "JFK");
+        return res;
+    }
+    public void dfs(List<String> res, Map<String, PriorityQueue<String>> map, String cur){
+        while(map.containsKey(cur) && !map.get(cur).isEmpty()){
+            dfs(res, map, map.get(cur).poll());
+        }
+        res.add(0, cur);
+    }
