@@ -158,4 +158,7 @@ Letter Combinations of a Phone Number 传入length(类似startindex), length==di
 234. Palindrome Linked List 找到中点后,将后半部分翻转, 然后两边往中间走. 注意奇偶性,把中间指针往后移一位. 然后调用reverse函数 要将最后节点reference传回
 42 trapping rain water 只需要知道当前左边最大值,右边最大值(leftMax, rightMax). 只移动"短板"(left,right). 如果当前值比短板值小(max - left/right),就加到result
 
+5.17 
+332 reconstruct ltinerary 先一边走一边存路径， 如果不能走了就退一步 继续找路径 直到访问完了所有的路径
+
 
