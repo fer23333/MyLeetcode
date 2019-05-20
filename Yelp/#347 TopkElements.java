@@ -46,5 +46,7 @@ public List<Integer> topKFrequent(int[] nums, int k) {
     }
     
     //bucket sort
-    //java 使用 泛型时 不能对array o
+    //java 的array of list 不支持泛型: List<Integer>[] list = new ArrayList[len]/ List<Integer>[] list = new List[len] 都可以   
+    // 但是 List<Integer>[] bucket = new ArrayList<>[2]/ List<Integer>[] bucket = new ArrayList<Integer>[2] 是不可以的
+    //List of array List<int[]> list = new ArrayList<>() 就没问题 正常支持泛型
     
